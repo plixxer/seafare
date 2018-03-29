@@ -873,7 +873,7 @@ function validateEmail(email) {
 			</div>
 			<div class="col-md-3">
 				<ul class="noli">
-					<li>Company Name in Directory:</li>
+					<li>Company Name in Directory</li>
 					<li class="directory"></li>
 				</ul>
 			</div>
