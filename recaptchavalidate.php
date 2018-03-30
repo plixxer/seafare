@@ -4,11 +4,11 @@
 <?php
 session_start();
 
-if(!empty($_SESSION['reCAPTCHA'])){
+if(!empty($_COOKIE['reCAPTCHA'])){
 	if(!empty($_POST['g-recaptcha-response'])){
 		echo validate($_POST['g-recaptcha-response']);
 	}else{
-		if($_SESSION['reCAPTCHA'] == true){
+		if($_COOKIE['reCAPTCHA'] == true){
 			echo 1;
 		}else{
 			echo 0;
@@ -18,7 +18,7 @@ if(!empty($_SESSION['reCAPTCHA'])){
 	if(!empty($_POST['g-recaptcha-response'])){
 		echo validate($_POST['g-recaptcha-response']);
 	}else{
-		print_r(json_encode($_SESSION, true));
+		print_r(json_encode($_COOKIE, true));
 	}
 }
 
@@ -30,10 +30,12 @@ function validate($captcha_response){
 		if($response['success'] == false){//response is false
 			return 0;
 		}else{//response is valid
-			$_SESSION['reCAPTCHA'] = true;
+			$_COOKIE['reCAPTCHA'] = true;
 			return 1;
 		}
 	}
 	return 0;
 }
 ?>
+
+i79t8ulsa3c7b3i6jns50plqm0

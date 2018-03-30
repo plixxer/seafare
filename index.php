@@ -749,7 +749,7 @@ function validateEmail(email) {
 			<!-- Modal Header -->
 			<div class="modal-header">
 				<h4 class="modal-title" id="myModalLabel">
-					Spam Protection
+					Verify Identity from Spam Protection
 				</h4>
 			</div>
 						
