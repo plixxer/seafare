@@ -37,5 +37,3 @@ function validate($captcha_response){
 	return 0;
 }
 ?>
-
-i79t8ulsa3c7b3i6jns50plqm0
