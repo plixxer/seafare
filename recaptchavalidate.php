@@ -2,7 +2,6 @@
 <?php include ('php/objects/_database.php') ?>
 
 <?php
-session_start();
 
 if(!empty($_COOKIE['reCAPTCHA'])){
 	if(!empty($_POST['g-recaptcha-response'])){
@@ -30,7 +29,7 @@ function validate($captcha_response){
 		if($response['success'] == false){//response is false
 			return 0;
 		}else{//response is valid
-			$_COOKIE['reCAPTCHA'] = true;
+			setcookie("reCAPTCHA", true, time()+3600);
 			return 1;
 		}
 	}
