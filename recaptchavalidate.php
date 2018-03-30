@@ -18,7 +18,7 @@ if(!empty($_COOKIE['reCAPTCHA'])){
 	if(!empty($_POST['g-recaptcha-response'])){
 		echo validate($_POST['g-recaptcha-response']);
 	}else{
-		print_r(json_encode($_COOKIE, true));
+		echo 0;
 	}
 }
 
