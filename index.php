@@ -786,7 +786,7 @@ $(document).on("submit", "#editRow form.needs-validation", function( event ) {
 	$.each($form.serializeArray(), function() {
 		form_data[this.name] = this.value;
 	});
-	console.log({"account_id":GET("id"), 'data': form_data});
+	console.log(this.checkValidity());
     if(this.checkValidity() !== false){
 		$.ajax({
 			type: "POST",
