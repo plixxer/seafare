@@ -728,7 +728,7 @@ $(document).on("click", ".list.exhibitors div#edit_row", function( event ) {
 		data[$(this).attr("id")] = $(this).attr("data-val");
 	});
 	$.ajax({
-		"type": "GET",
+		"type": "POST",
 		"url": 'partials/edit_row_modal',
 		"data": data,
 		success: function(response){

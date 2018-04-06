@@ -18,28 +18,28 @@
 				<form role="form" class="needs-validation" novalidate>
 					<div class="form-group">
 						<label for="firstnameinput">First Name</label>
-						<input type="text" name="firstname" class="form-control" id="firstnameinput" placeholder="enter first name" value="<?= $_GET['first_name__c']; ?>"/>
+						<input type="text" name="firstname" class="form-control" id="firstnameinput" placeholder="enter first name" value="<?php echo $_POST['first_name__c']; ?>"/>
 						<div class="invalid-feedback">
         				  Please provide a first name.
         				</div>
 					</div>
 					<div class="form-group">
 						<label for="lastnameinput">Last Name</label>
-						<input type="text" name="lastname" class="form-control" id="lastnameinput" placeholder="enter last name" value="<?= $_GET['last_name__c']; ?>"/>
+						<input type="text" name="lastname" class="form-control" id="lastnameinput" placeholder="enter last name" value="<?php echo $_POST['last_name__c']; ?>"/>
 						<div class="invalid-feedback">
         				   Please provide a last name.
         				</div>
 					</div>
 					<div class="form-group">
 						<label for="emailinput">Email</label>
-						<input type="email" name="email" class="form-control" id="emailinput" placeholder="enter email" value="<?= $_GET['email__c']; ?>"/>
+						<input type="email" name="email" class="form-control" id="emailinput" placeholder="enter email" value="<?php echo $_POST['email__c']; ?>"/>
 						<div class="invalid-feedback">
         				  Please provide a propper email
         				</div>
 					</div>
 					<div class="form-group">
 						<label for="countryinput">Country</label>
-						<select name="country" class="dropdown_countries form-control" id="countryinput" placeholder="enter country" value="<?= $_GET['country__c']; ?>">
+						<select name="country" class="dropdown_countries form-control" id="countryinput" placeholder="enter country" value="<?php echo $_POST['country__c']; ?>">
 						</select>
 						<div class="invalid-feedback">
         				  Please provide a country.
@@ -47,13 +47,13 @@
 					</div>
 					<div class="form-group">
 						<label for="positioninput">Position</label>
-						<input name="position" type="text" class="form-control" id="positioninput" placeholder="enter position"  value="<?= $_GET['position__c']; ?>"/>
+						<input name="position" type="text" class="form-control" id="positioninput" placeholder="enter position"  value="<?php echo $_POST['position__c']; ?>"/>
 						<div class="invalid-feedback">
         				  Please provide a position.
         				</div>
 					</div>
-					<input type="hidden" name="attendeetype" class="form-control" id="attendeetypeinput" value="<?= $_GET['attendeetype']; ?>"/>
-					<input type="hidden" name="sql_id" class="form-control" id="attendeetypeinput" value="<?= $_GET['sql_id']; ?>"/>
+					<input type="hidden" name="attendeetype" class="form-control" id="attendeetypeinput" value="<?php echo $_POST['attendeetype']; ?>"/>
+					<input type="hidden" name="sql_id" class="form-control" id="attendeetypeinput" value="<?php echo $_POST['sql_id']; ?>"/>
 				</form>	
 			</div>
 			<!-- Modal Footer -->
