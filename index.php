@@ -241,11 +241,9 @@ $(document).ready(function(){
 					editable_obj['validate'] = function(value){
 						if($.trim(value) == '') {
 							$(".emailValidationForm").modal("show");
-							return false;
 						}else if(!validateEmail($.trim(value))){
 							$(".emailValidationForm").modal("show");
-							console.log('not valid email');
-						}	return 'This is not a valid email';
+							console.log('not valid email');\
 					};
 					$('table.list.exhibitors .editable-email').editable(editable_obj);
 
@@ -363,11 +361,9 @@ $(document).ready(function(){
 					editable_obj['validate'] = function(value){
 						if($.trim(value) == '') {
 							$(".emailValidationForm").modal("show");
-							return false;
 						}else if(!validateEmail($.trim(value))){
 							$(".emailValidationForm").modal("show");
 							console.log('not valid email');
-						}	return 'This is not a valid email';
 					};
 					$('table.list.guests .editable-email').editable(editable_obj);
 
