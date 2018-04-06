@@ -17,8 +17,7 @@
 			"email__c"=> $_POST["data"]["email"],
 			"first_name__c"=> $_POST["data"]["firstname"],
 			"last_name__c"=> $_POST["data"]["lastname"],
-			"position__c"=> $_POST["data"]["position"],
-			"remove__c"=>false
+			"position__c"=> $_POST["data"]["position"]
 		),
 		Array(
 			"id"=>$_POST['sql_id'],

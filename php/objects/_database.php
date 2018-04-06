@@ -151,7 +151,7 @@ class _database extends _globals{
 			);
 			$vars['condStr'] = "WHERE (" . $vars['condParse']['key?:keyStr'] . ")";
 			$sql = "UPDATE " . $table . " SET " . $vars['valuesParse']['key?:keyStr'] . " " . (($conditions != null)? $vars['condStr']: "");
-			echo "<br>" . $sql . "<br>";
+			//echo "<br>" . $sql . "<br>";
 			$sql_prep = $this->bind_value($sql, $vars['valuesParse']['params'], $vars['condParse']['params']);
 			$sql_prep->execute();
 			return ($sql_prep->rowCount()) ? true : false;
