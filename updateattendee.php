@@ -9,9 +9,6 @@
 
 	$db = new _database(0x0);
 
-
-	print_r($_POST);
-
 	$db->update("salesforce.attendee__c",
 		Array(
 			"attendee_type__c"=> $_POST["data"]["attendeetype"],

@@ -790,7 +790,7 @@ $(document).on("submit", "#editRow form.needs-validation", function( event ) {
     	console.log("updateattendee");
 		$.ajax({
 			type: "POST",
-			url: 'https://gentle-dawn-65313.herokuapp.com/updateattendee',
+			url: 'updateattendee',
 			data: {"account_id":GET("id"), 'data': form_data},
 			success: function(response){
 				console.log("Made it to ajax");
