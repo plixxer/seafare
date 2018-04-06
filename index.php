@@ -732,6 +732,7 @@ $(document).on("click", ".list.exhibitors div#edit_row", function( event ) {
 		$("#editRow").modal({backdrop: 'static', keyboard: false});
 	});
 	console.log(data);
+	console.log("partials/edit_row_modal?" + $.param(data));
 });
 
 $(document).on("click", ".list.guests div#edit_row", function( event ) {
@@ -746,6 +747,7 @@ $(document).on("click", ".list.guests div#edit_row", function( event ) {
 		$("#editRow").modal({backdrop: 'static', keyboard: false});
 	});
 	console.log(data);
+	console.log("partials/edit_row_modal?" + $.param(data));
 });
 
 function list_build(header, data){//obj, arr of obj
