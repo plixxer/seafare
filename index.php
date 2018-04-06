@@ -184,7 +184,7 @@ $(document).ready(function(){
 	$.ajax({
 		type: "POST",
 		url: "https://gentle-dawn-65313.herokuapp.com/exhibitors",
-		data: {"account_id":GET("id"), "orderby": GET("orderby"), "order": GET("order")},
+		data: {"account_id":GET("id"), "orderby": GET("exh_orderby"), "order": GET("exh_order")},
 		success: function(data){
 			data = JSON.parse(data);
 
@@ -302,7 +302,7 @@ $(document).ready(function(){
 	$.ajax({
 		type: "POST",
 		url: "https://gentle-dawn-65313.herokuapp.com/guests",
-		data: {"account_id":GET("id")},
+		data: {"account_id":GET("id"), "orderby": GET("guest_orderby"), "order": GET("guest_order")},
 		success: function(data){
 			data = JSON.parse(data);
 
@@ -577,9 +577,66 @@ $(document).on("submit", ".recaptchaform form", function( event ) {
 	}
   });
 
+
+
 $(document).on("click", ".recaptchaform .submit", function( event ) {
 	var $form = $(this).parents(".recaptchaform").find("form");
 	$form.trigger("submit");
+});
+
+
+$(document).on("click", ".list.exhibitors th", function( event ) {
+	var field = '';
+	switch($(this).text()){
+		case 'First Name':{
+			field = 'first_name__c';
+			break;
+		}
+		case 'Last Name':{
+			field = 'last_name__c';
+			break;
+		}
+		case 'Email':{
+			field = 'email__c';
+			break;
+		}
+		case 'First Name':{
+			field = 'first_name__c';
+			break;
+		}
+		case 'Position':{
+			field = 'position__c';
+			break;
+		}
+		case 'Country/Region':{
+			field = 'country__c';
+			break;
+		}
+		case 'Confirmation Number':{
+			field = 'confirmation_number__c';
+			break;
+		}
+	}
+	var get = (!GET('order'))? 'ASC' : GET('order');
+	var new_search = location.search;
+	if(new_search.indexOf("exh_orderby=") == -1){
+		if(new_search != ""){
+			new_search += "&";
+		}else{
+			new_search = "?";
+		}
+		new_search += "exh_orderby=" + field;
+	}
+	if(new_search.indexOf("exh_order=") == -1){
+		if(new_search != ""){
+			new_search += "&";
+		}else{
+			new_search = "?";
+		}
+		new_search += "exh_order=" + get;
+	}
+	location.search = new_search.replace(/exh_orderby=[^&$]*/i, 'exh_orderby=' + field).replace(/exh_order=[^&$]*/i, 'exh_order=' + get);
+
 });
 
 function list_build(header, data){//obj, arr of obj

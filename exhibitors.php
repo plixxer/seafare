@@ -1,7 +1,3 @@
-<?php
-error_reporting(E_ALL);
-ini_set('display_errors', 'On');
-?>
 <?php include ('config/config.php') ?>
 <?php include ('php/objects/_database.php') ?>
 
@@ -41,12 +37,5 @@ ini_set('display_errors', 'On');
     $options
   );
   print_r(json_encode($exh_data, true));
-  
-
-function out($arr){
-  echo "<pre>";
-  print_r($arr);
-  echo "</pre>";
-}
 
 ?>
