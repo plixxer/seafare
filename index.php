@@ -208,12 +208,12 @@ $(document).ready(function(){
 				}
 				data_build.push([
 					'<div id="edit_row" sql_id="'+ data[i]['id'] +'"></div>',
-					data[i]['confirmation_number__c'],
-					'<a href="#" class="editable-dropdown" id="country__c" sql_id="' + data[i]['id'] + '" selected="' + data[i]['country__c'] + '">' + data[i]['country__c'] + '</a>',
-					'<a href="#" class="editable" id="position__c" sql_id="'+ data[i]['id'] +'" data-type="text" data-title="Enter position">' + data[i]['position__c'] + '</a>',
-					'<a href="#" class="editable-email" id="email__c" sql_id="'+ data[i]['id'] +'" data-type="text" data-title="Enter email">' + data[i]['email__c'] + '</a>',
-					'<a href="#" class="editable" id="last_name__c" sql_id="'+ data[i]['id'] +'" data-type="text" data-title="Enter last name">' + data[i]['last_name__c'] + '</a>',
-					'<a href="#" class="editable" id="first_name__c" sql_id="'+ data[i]['id'] +'" data-type="text" data-title="Enter first name">' + data[i]['first_name__c'] + '</a>',
+					'<span data-val="' + data[i]['country__c'] + '">' + data[i]['confirmation_number__c'] + '</span>',
+					'<a href="#" class="editable-dropdown" id="country__c" sql_id="' + data[i]['id'] + '" selected="' + data[i]['country__c'] + '" data-val="' + data[i]['country__c'] + '">' + data[i]['country__c'] + '</a>',
+					'<a href="#" class="editable" id="position__c" sql_id="'+ data[i]['id'] +'" data-type="text" data-title="Enter position" data-val="' + data[i]['position__c'] + '">' + data[i]['position__c'] + '</a>',
+					'<a href="#" class="editable editable-email" id="email__c" sql_id="'+ data[i]['id'] +'" data-type="text" data-title="Enter email" data-val="' + data[i]['email__c'] + '">' + data[i]['email__c'] + '</a>',
+					'<a href="#" class="editable" id="last_name__c" sql_id="'+ data[i]['id'] +'" data-type="text" data-title="Enter last name" data-val="' + data[i]['last_name__c'] + '">' + data[i]['last_name__c'] + '</a>',
+					'<a href="#" class="editable" id="first_name__c" sql_id="'+ data[i]['id'] +'" data-type="text" data-title="Enter first name" data-val="' + data[i]['first_name__c'] + '">' + data[i]['first_name__c'] + '</a>',
 					'<input class="remove-user" sql_id="' + data[i]['id'] + '" type="checkbox" value="1" />'
 				]);
 			}
@@ -327,12 +327,12 @@ $(document).ready(function(){
 				}
 				data_build.push([
 					'<div id="edit_row" sql_id="'+ data[i]['id'] +'"></div>',
-					data[i]['confirmation_number__c'],
-					'<a href="#" class="editable-dropdown" id="country__c" sql_id="' + data[i]['id'] + '" selected="' + data[i]['country__c'] + '">' + data[i]['country__c'] + '</a>',
-					'<a href="#" class="editable" id="position__c" sql_id="'+ data[i]['id'] +'" data-type="text" data-title="Enter position">' + data[i]['position__c'] + '</a>',
-					'<a href="#" class="editable editable-email" id="email__c" sql_id="'+ data[i]['id'] +'" data-type="text" data-title="Enter email">' + data[i]['email__c'] + '</a>',
-					'<a href="#" class="editable" id="last_name__c" sql_id="'+ data[i]['id'] +'" data-type="text" data-title="Enter last name">' + data[i]['last_name__c'] + '</a>',
-					'<a href="#" class="editable" id="first_name__c" sql_id="'+ data[i]['id'] +'" data-type="text" data-title="Enter first name">' + data[i]['first_name__c'] + '</a>',
+					'<span data-val="' + data[i]['country__c'] + '">' + data[i]['confirmation_number__c'] + '</span>',
+					'<a href="#" class="editable-dropdown" id="country__c" sql_id="' + data[i]['id'] + '" selected="' + data[i]['country__c'] + '" data-val="' + data[i]['country__c'] + '">' + data[i]['country__c'] + '</a>',
+					'<a href="#" class="editable" id="position__c" sql_id="'+ data[i]['id'] +'" data-type="text" data-title="Enter position" data-val="' + data[i]['position__c'] + '">' + data[i]['position__c'] + '</a>',
+					'<a href="#" class="editable editable-email" id="email__c" sql_id="'+ data[i]['id'] +'" data-type="text" data-title="Enter email" data-val="' + data[i]['email__c'] + '">' + data[i]['email__c'] + '</a>',
+					'<a href="#" class="editable" id="last_name__c" sql_id="'+ data[i]['id'] +'" data-type="text" data-title="Enter last name" data-val="' + data[i]['last_name__c'] + '">' + data[i]['last_name__c'] + '</a>',
+					'<a href="#" class="editable" id="first_name__c" sql_id="'+ data[i]['id'] +'" data-type="text" data-title="Enter first name" data-val="' + data[i]['first_name__c'] + '">' + data[i]['first_name__c'] + '</a>',
 					'<input class="remove-user" sql_id="' + data[i]['id'] + '" type="checkbox" value="1" />'
 				]);
 			}
@@ -721,7 +721,7 @@ $(document).on("click", ".list.guests th", function( event ) {
 });
 
 $(document).on("click", ".list.exhibitors div#edit_row", function( event ) {
-	console.log($(this).attr('sql_id'));
+	console.log($(this).attr('sql_id').parent().parent());
 });
 
 function list_build(header, data){//obj, arr of obj
@@ -760,8 +760,7 @@ function validateEmail(email) {
 	</script>
 </head>
 <body>
-
-<!-- Guest Modal -->
+<!-- Attendee Modal -->
 <div class="modal fade addform" id="AttendeeForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
 		<div class="modal-content">
