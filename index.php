@@ -787,11 +787,13 @@ $(document).on("submit", "#editRow form.needs-validation", function( event ) {
 		form_data[this.name] = this.value;
 	});
     if(this.checkValidity() !== false){
+    	console.log("updateattendee");
 		$.ajax({
 			type: "POST",
 			url: 'https://gentle-dawn-65313.herokuapp.com/updateattendee',
 			data: {"account_id":GET("id"), 'data': form_data},
 			success: function(response){
+				console.log("Made it to ajax");
 				console.log(response);
 				if(response == 1){
 					$("#editRow").modal("hide");
