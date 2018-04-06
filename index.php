@@ -190,7 +190,7 @@ $(document).ready(function(){
 			var data_build = [];
 			for (var i = data.length - 1; i >= 0; i--) {
 				if(data[i]['country__c'] != null){
-					data[i]['country__c'] = data[i]['country__c'].toLowerCase();
+					data[i]['country__c'] = data[i]['country__c'];
 				}
 				for(var key in data[i]){
 					if(data[i][key] == null){
@@ -254,7 +254,7 @@ $(document).ready(function(){
 
 					var country_regions_source = [];
 					for(var key in window.country_regions){
-						var country_region_formatted = window.country_regions[key].toLowerCase();
+						var country_region_formatted = window.country_regions[key];
 						country_regions_source.push({id: country_region_formatted, text: country_region_formatted});
 					}
 
@@ -302,7 +302,7 @@ $(document).ready(function(){
 			var data_build = [];
 			for (var i = data.length - 1; i >= 0; i--) {
 				if(data[i]['country__c'] != null){
-					data[i]['country__c'] = data[i]['country__c'].toLowerCase();
+					data[i]['country__c'] = data[i]['country__c'];
 				}
 				for(var key in data[i]){
 					if(data[i][key] == null){
@@ -370,7 +370,7 @@ $(document).ready(function(){
 
 					var country_regions_source = [];
 					for(var key in window.country_regions){
-						var country_region_formatted = window.country_regions[key].toLowerCase();
+						var country_region_formatted = window.country_regions[key];
 						country_regions_source.push({id: country_region_formatted, text: country_region_formatted});
 					}
 
@@ -603,7 +603,7 @@ function GET(name, url) {
 }
 function validateEmail(email) {
     var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(email).toLowerCase());
+    return re.test(String(email));
 }
 
 	</script>
