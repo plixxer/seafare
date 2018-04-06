@@ -515,7 +515,7 @@ $(document).on('click','.list.guests input[type="checkbox"]', function(){
 	}
 });
 
-$(document).on("submit", "form.needs-validation", function( event ) {
+$(document).on("submit", "#AttendeeForm form.needs-validation, #GuestForm form.needs-validation", function( event ) {
 	event.preventDefault();
     event.stopPropagation();
 	var $form = $(this).parents(".addform").find("form.needs-validation");
@@ -776,6 +776,36 @@ $(document).on("click", ".list.guests div#edit_row", function( event ) {
 		}
 	});
 });
+
+$(document).on("submit", "#editRow form.needs-validation", function( event ) {
+	event.preventDefault();
+    event.stopPropagation();
+	var $form = $(this).parents("#editRow").find("form.needs-validation");
+    this.classList.add('was-validated');
+    var form_data = { };
+	$.each($form.serializeArray(), function() {
+		form_data[this.name] = this.value;
+	});
+    if(this.checkValidity() !== false){
+		$.ajax({
+			type: "POST",
+			url: 'https://gentle-dawn-65313.herokuapp.com/updateattendee',
+			data: {"account_id":GET("id"), 'data': form_data},
+			success: function(response){
+				if(response == 2){
+					$("#editRow").modal("hide");
+					$(".warningForm").modal("show");
+				}else if(response == 1){
+					$("#editRow").modal("hide");
+					location.reload();
+				}
+				console.log(response);
+			},
+			dataType: 'json'
+		});
+	}
+  });
+
 
 function list_build(header, data){//obj, arr of obj
 	var th_string = '';

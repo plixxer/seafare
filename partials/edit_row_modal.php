@@ -56,7 +56,7 @@
         				</div>
 					</div>
 					<input type="hidden" name="attendeetype" class="form-control" id="attendeetypeinput" value="<?= $_GET['attendeetype']; ?>"/>
-					<input type="hidden" name="sql_id" class="form-control" id="attendeetypeinput" value="<?= $_GET['sql_id']; ?>"/>
+					<input type="hidden" name="sql_id" class="form-control" id="sql_id" value="<?= $_GET['sql_id']; ?>"/>
 				</form>	
 			</div>
 			<!-- Modal Footer -->
