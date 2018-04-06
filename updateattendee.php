@@ -12,8 +12,7 @@
 
 	print_r($_POST);
 
-/*
-	$db->insert("salesforce.attendee__c",
+	$db->update("salesforce.attendee__c",
 		Array(
 			"attendee_type__c"=> $_POST["data"]["attendeetype"],
 			"company__c"=> $_POST["account_id"],
@@ -28,7 +27,7 @@
 			"id"=>$_POST['sql_id']
 		)
 	);
-	*/
+	
 
 function out($arr){
 	echo "<pre>";
