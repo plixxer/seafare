@@ -730,12 +730,11 @@ $(document).on("click", ".list.exhibitors div#edit_row", function( event ) {
 	$.ajax({
 		"type": "POST",
 		"url": 'partials/edit_row_modal',
-		"data": data,
+		"data": JSON.stringify(data),
 		success: function(response){
 			$(".edit_row_modal_container").html(response);
 			$("#editRow").modal({backdrop: 'static', keyboard: false});
-		},
-		dataType: 'html'
+		}
 	});
 	console.log(data);
 	console.log("partials/edit_row_modal?" + $.param(data));
