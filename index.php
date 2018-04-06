@@ -199,6 +199,7 @@ $(document).ready(function(){
 					}
 				}
 				data_build.push([
+					'<div id="edit_row" sql_id="'+ data[i]['id'] +'"></div>',
 					data[i]['confirmation_number__c'],
 					'<a href="#" class="editable-dropdown" id="country__c" sql_id="' + data[i]['id'] + '" selected="' + data[i]['country__c'] + '">' + data[i]['country__c'] + '</a>',
 					'<a href="#" class="editable" id="position__c" sql_id="'+ data[i]['id'] +'" data-type="text" data-title="Enter position">' + data[i]['position__c'] + '</a>',
@@ -317,6 +318,7 @@ $(document).ready(function(){
 					}
 				}
 				data_build.push([
+					'<div id="edit_row" sql_id="'+ data[i]['id'] +'"></div>',
 					data[i]['confirmation_number__c'],
 					'<a href="#" class="editable-dropdown" id="country__c" sql_id="' + data[i]['id'] + '" selected="' + data[i]['country__c'] + '">' + data[i]['country__c'] + '</a>',
 					'<a href="#" class="editable" id="position__c" sql_id="'+ data[i]['id'] +'" data-type="text" data-title="Enter position">' + data[i]['position__c'] + '</a>',
