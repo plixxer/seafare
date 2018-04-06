@@ -26,6 +26,9 @@
       'company__c'=>$_POST['account_id'],
       'attendee_type__c'=>'Exhibitor',
       'remove__c'=>false
+    ),
+    Array(
+      "ascdesc"=>"first_name__c"
     )
   );
   print_r(json_encode($exh_data, true));
