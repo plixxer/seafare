@@ -32,7 +32,7 @@ ini_set('display_errors', 'On');
       'remove__c'=>false
     ),
     Array(
-      "ascdesc"=>"first_name__c"
+      "ascdesc"=>"ASC"
     )
   );
   print_r(json_encode($exh_data, true));
