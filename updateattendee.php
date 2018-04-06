@@ -7,6 +7,7 @@
 //attendee__c
 
 
+try {
 	$db = new _database(0x0);
 
 	print_r(
@@ -23,6 +24,10 @@
 		)
 	);
 	echo 1;
+	
+} catch (Exception $e) {
+	var_dump($e->getMessage());
+}
 	
 
 function out($arr){
