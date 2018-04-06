@@ -251,7 +251,6 @@ $(document).ready(function(){
 							console.log('not valid email');
 							return 'This is not a valid email';
 						}
-						return true;
 					};
 					$('table.list.exhibitors .editable-email').editable(editable_obj);
 
@@ -375,7 +374,6 @@ $(document).ready(function(){
 							console.log('not valid email');
 							return 'This is not a valid email';
 						}
-						return true;
 					};
 					$('table.list.guests .editable-email').editable(editable_obj);
 
