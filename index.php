@@ -617,11 +617,11 @@ $(document).on("click", ".list.exhibitors th", function( event ) {
 			break;
 		}
 	}
-	var get = (!GET('order'))? 'ASC' : GET('order');
-	if(!GET('order')){
+	var get = (!GET('exh_order'))? 'ASC' : GET('exh_order');
+	if(!GET('exh_order')){
 		get = "ASC";
 	}else{
-		if(GET('order').toLocaleLowerCase() == "asc"){
+		if(GET('exh_order').toLocaleLowerCase() == "asc"){
 			get = "desc";
 		}else{
 			get = "asc";
@@ -679,8 +679,8 @@ $(document).on("click", ".list.guests th", function( event ) {
 			break;
 		}
 	}
-	var get = (!GET('order'))? 'ASC' : GET('order');
-	if(!GET('order')){
+	var get = (!GET('guest_order'))? 'ASC' : GET('guest_order');
+	if(!GET('guest_order')){
 		get = "ASC";
 	}else{
 		if(GET('order').toLocaleLowerCase() == "asc"){
