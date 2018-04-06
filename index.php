@@ -184,7 +184,7 @@ $(document).ready(function(){
 	$.ajax({
 		type: "POST",
 		url: "https://gentle-dawn-65313.herokuapp.com/exhibitors",
-		data: {"account_id":GET("id"), "sortby": GET("sortby")},
+		data: {"account_id":GET("id"), "orderby": GET("orderby"), "order": GET("order")},
 		success: function(data){
 			data = JSON.parse(data);
 
