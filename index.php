@@ -800,8 +800,7 @@ $(document).on("submit", "#editRow form.needs-validation", function( event ) {
 					//location.reload();
 				}
 				console.log(response);
-			},
-			dataType: 'json'
+			}
 		});
 	}
   });
