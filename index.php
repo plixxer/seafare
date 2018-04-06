@@ -804,7 +804,7 @@ $(document).on("submit", "#editRow form.needs-validation", function( event ) {
 	}
   });
 $(document).on("click", "#editRow .save", function( event ) {
-	var $form = $(this).parents("#editRow").find("form.needs-validation");
+	var $form = $(this).closest("#editRow").find("form.needs-validation");
 	$form.trigger("submit");
 });
 function list_build(header, data){//obj, arr of obj
