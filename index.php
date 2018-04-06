@@ -228,6 +228,7 @@ $(document).ready(function(){
 								type: "POST",
 								url: 'https://gentle-dawn-65313.herokuapp.com/updatelist',
 								data: {"account_id":GET("id"),'id': $(this).attr('sql_id'), 'field': $(this).attr('id'), 'value': newValue},
+								onblur: 'submit',
 								success: function(response){
 									console.log(response);
 								},
@@ -335,6 +336,7 @@ $(document).ready(function(){
 				).promise().then(function(){
 					var editable_obj = {
 						showbuttons: false,
+						onblur: 'submit',
 						success: function(response, newValue){
 							console.log([response, newValue, $(this).attr('sql_id')]);
 							$.ajax({
