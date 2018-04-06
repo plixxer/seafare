@@ -721,44 +721,41 @@ $(document).on("click", ".list.guests th", function( event ) {
 });
 
 $(document).on("click", ".list.exhibitors div#edit_row", function( event ) {
-	var data = Array();
-	data['sql_id'] = $(this).attr('sql_id');
-	data['attendeetype'] = "Exhibitor";
+	var data_ = Array();
+	data_['sql_id'] = $(this).attr('sql_id');
+	data_['attendeetype'] = "Exhibitor";
 	$(this).closest("table tr").find("[data-val]").each(function(key, val){
-		data[$(this).attr("id")] = $(this).attr("data-val");
+		data_[$(this).attr("id")] = $(this).attr("data-val");
 	});
 	$.ajax({
-		"type": "POST",
-		"url": 'partials/edit_row_modal',
-		"data": JSON.stringify(data),
-		success: function(response){
-			$(".edit_row_modal_container").html(response);
+		url: "partials/edit_row_modal",
+		type: "get", //send it through get method
+		data: data_,
+		success: function(response) {
+	  		$(".edit_row_modal_container").html(response);
 			$("#editRow").modal({backdrop: 'static', keyboard: false});
 		}
 	});
-	console.log(data);
-	console.log("partials/edit_row_modal?" + $.param(data));
+	console.log(data_);
 });
 
 $(document).on("click", ".list.guests div#edit_row", function( event ) {
-	var data = Array();
-	data['sql_id'] = $(this).attr('sql_id');
-	data['attendeetype'] = "Guest";
+	var data_ = Array();
+	data_['sql_id'] = $(this).attr('sql_id');
+	data_['attendeetype'] = "Guest";
 	$(this).closest("table tr").find("[data-val]").each(function(key, val){
-		data[$(this).attr("id")] = $(this).attr("data-val");
+		data_[$(this).attr("id")] = $(this).attr("data-val");
 	});
 	$.ajax({
-		"type": "GET",
-		"url": 'partials/edit_row_modal',
-		"data": data,
-		success: function(response){
-			$(".edit_row_modal_container").html(response);
+		url: "partials/edit_row_modal",
+		type: "get", //send it through get method
+		data: data_,
+		success: function(response) {
+	  		$(".edit_row_modal_container").html(response);
 			$("#editRow").modal({backdrop: 'static', keyboard: false});
-		},
-		dataType: 'html'
+		}
 	});
-	console.log(data);
-	console.log("partials/edit_row_modal?" + $.param(data));
+	console.log(data_);
 });
 
 function list_build(header, data){//obj, arr of obj
