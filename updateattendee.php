@@ -10,14 +10,9 @@
 try {
 	$db = new _database(0x0);
 
-	print_r(
-	Array(
-			"first_name__c"=> $_POST["data"]["firstname"]
-		));
-
 	$db->update("salesforce.attendee__c",
 		Array(
-			"first_name__c"=> $_POST["data"]["firstname"]
+			"first_name__c"=> "Johnny"
 		),
 		Array(
 			"id"=>$_POST['sql_id']
