@@ -238,7 +238,7 @@ $(document).ready(function(){
 					};
 
 					$('table.list.exhibitors .editable').editable(editable_obj);
-					editable_obj['validate'] = function(){
+					editable_obj['validate'] = function(value){
 						if($.trim(value) == '') {
 							$(".emailValidationForm").modal("show");
 							return 'This field is required.'
@@ -955,6 +955,6 @@ function validateEmail(email) {
 		</div>
 	</div>
 </div>
-version 1
+version 2
 </body>
 </html>
