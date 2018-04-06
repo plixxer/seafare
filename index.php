@@ -234,6 +234,9 @@ $(document).ready(function(){
 								},
 								dataType: 'json'
 							});
+						},
+						onerror:function(response){
+							console.log("error");
 						}
 					};
 
