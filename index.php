@@ -134,6 +134,14 @@ ul.noli > li{
     padding: 10px 17px;
     margin: 0;
 }
+div#edit_row{
+    background: #428bca;
+    border: 4px solid #347ab5;
+    width: 10px;
+    padding: 6px;
+    margin: 0 auto;
+    cursor:pointer;
+}
 </style>
 	<script>
 $(window).load(function(){
@@ -710,6 +718,10 @@ $(document).on("click", ".list.guests th", function( event ) {
 	}
 	location.search = new_search.replace(/guest_orderby=[^&$]*/i, 'guest_orderby=' + field).replace(/guest_order=[^&$]*/i, 'guest_order=' + get);
 
+});
+
+$(document).on("click", ".list.exhibitors div#edit_row", function( event ) {
+	console.log($(this).attr('sql_id'));
 });
 
 function list_build(header, data){//obj, arr of obj
