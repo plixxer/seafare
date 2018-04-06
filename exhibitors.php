@@ -27,7 +27,7 @@ ini_set('display_errors', 'On');
       "remove__c"
     ),
     Array(
-      'company__c'=>$_POST['account_id'],
+      'company__c'=>$_GET['account_id'],
       'attendee_type__c'=>'Exhibitor',
       'remove__c'=>false
     ),
