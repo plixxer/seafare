@@ -721,7 +721,12 @@ $(document).on("click", ".list.guests th", function( event ) {
 });
 
 $(document).on("click", ".list.exhibitors div#edit_row", function( event ) {
-	console.log($(this).attr('sql_id').parent().parent());
+	var sql_id = $(this).attr('sql_id');
+	var data = Array();
+	$(this).closest("table tr").find("[data-val]").each(function(key, val){
+		data[$(this).attr("id")] = $(this).attr("data-val");
+	});
+	console.log(data);
 });
 
 function list_build(header, data){//obj, arr of obj
