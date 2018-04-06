@@ -727,9 +727,15 @@ $(document).on("click", ".list.exhibitors div#edit_row", function( event ) {
 	$(this).closest("table tr").find("[data-val]").each(function(key, val){
 		data[$(this).attr("id")] = $(this).attr("data-val");
 	});
-	$.get( "partials/edit_row_modal?" + $.param(data), function(response) {
-		$(".edit_row_modal_container").html(response);
-		$("#editRow").modal({backdrop: 'static', keyboard: false});
+	$.ajax({
+		"type": "GET",
+		"url": 'partials/edit_row_modal',
+		"data": data,
+		success: function(response){
+			$(".edit_row_modal_container").html(response);
+			$("#editRow").modal({backdrop: 'static', keyboard: false});
+		},
+		dataType: 'html'
 	});
 	console.log(data);
 	console.log("partials/edit_row_modal?" + $.param(data));
@@ -742,9 +748,15 @@ $(document).on("click", ".list.guests div#edit_row", function( event ) {
 	$(this).closest("table tr").find("[data-val]").each(function(key, val){
 		data[$(this).attr("id")] = $(this).attr("data-val");
 	});
-	$.get( "partials/edit_row_modal?" + $.param(data), function(response) {
-		$(".edit_row_modal_container").html(response);
-		$("#editRow").modal({backdrop: 'static', keyboard: false});
+	$.ajax({
+		"type": "GET",
+		"url": 'partials/edit_row_modal',
+		"data": data,
+		success: function(response){
+			$(".edit_row_modal_container").html(response);
+			$("#editRow").modal({backdrop: 'static', keyboard: false});
+		},
+		dataType: 'html'
 	});
 	console.log(data);
 	console.log("partials/edit_row_modal?" + $.param(data));
