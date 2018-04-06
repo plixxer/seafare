@@ -245,7 +245,7 @@ $(document).ready(function(){
 						}else if(!validateEmail($.trim(value))){
 							$(".emailValidationForm").modal("show");
 							console.log('not valid email');
-						}	return false;
+						}	return 'This is not a valid email';
 					};
 					$('table.list.exhibitors .editable-email').editable(editable_obj);
 
@@ -367,7 +367,7 @@ $(document).ready(function(){
 						}else if(!validateEmail($.trim(value))){
 							$(".emailValidationForm").modal("show");
 							console.log('not valid email');
-						}	return false;
+						}	return 'This is not a valid email';
 					};
 					$('table.list.guests .editable-email').editable(editable_obj);
 
@@ -955,6 +955,6 @@ function validateEmail(email) {
 		</div>
 	</div>
 </div>
-version 2
+version 3
 </body>
 </html>
