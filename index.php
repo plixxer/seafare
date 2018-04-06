@@ -427,13 +427,14 @@ $(document).ready(function(){
 			});
 		}
 	});
-
+	var countries;
 	$.ajax({
 		type: "GET",
 		url: 'https://gentle-dawn-65313.herokuapp.com/getcountries',
 		cache: true,
 		data: {},
 		success: function(response){
+			countries = response;
 			for(var key in response){
 				$('select[name="country"]').each(function(){
 					$(this).append("<option value='" + response[key] + "'>"+ response[key] +"</option>");
@@ -734,6 +735,11 @@ $(document).on("click", ".list.exhibitors div#edit_row", function( event ) {
 		data: data_,
 		success: function(response) {
 	  		$(".edit_row_modal_container").html(response);
+	  		for(var key in countries){
+				$('select[name="country"]').each(function(){
+					$(this).append("<option value='" + countries[key] + "'>"+ countries[key] +"</option>");
+				});
+			}
 			$("#editRow").modal({backdrop: 'static', keyboard: false});
 		}
 	});
@@ -753,6 +759,11 @@ $(document).on("click", ".list.guests div#edit_row", function( event ) {
 		data: data_,
 		success: function(response) {
 	  		$(".edit_row_modal_container").html(response);
+	  		for(var key in countries){
+				$('select[name="country"]').each(function(){
+					$(this).append("<option value='" + countries[key] + "'>"+ countries[key] +"</option>");
+				});
+			}
 			$("#editRow").modal({backdrop: 'static', keyboard: false});
 		}
 	});
