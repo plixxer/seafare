@@ -618,6 +618,15 @@ $(document).on("click", ".list.exhibitors th", function( event ) {
 		}
 	}
 	var get = (!GET('order'))? 'ASC' : GET('order');
+	if(!GET('order')){
+		get = "ASC";
+	}else{
+		if(GET('order').toLocaleLowerCase() == "asc"){
+			get = "desc";
+		}else{
+			get = "asc";
+		}
+	}
 	var new_search = location.search;
 	if(new_search.indexOf("exh_orderby=") == -1){
 		if(new_search != ""){
@@ -636,6 +645,68 @@ $(document).on("click", ".list.exhibitors th", function( event ) {
 		new_search += "exh_order=" + get;
 	}
 	location.search = new_search.replace(/exh_orderby=[^&$]*/i, 'exh_orderby=' + field).replace(/exh_order=[^&$]*/i, 'exh_order=' + get);
+
+});
+$(document).on("click", ".list.guests th", function( event ) {
+	var field = '';
+	switch($(this).text()){
+		case 'First Name':{
+			field = 'first_name__c';
+			break;
+		}
+		case 'Last Name':{
+			field = 'last_name__c';
+			break;
+		}
+		case 'Email':{
+			field = 'email__c';
+			break;
+		}
+		case 'First Name':{
+			field = 'first_name__c';
+			break;
+		}
+		case 'Position':{
+			field = 'position__c';
+			break;
+		}
+		case 'Country/Region':{
+			field = 'country__c';
+			break;
+		}
+		case 'Confirmation Number':{
+			field = 'confirmation_number__c';
+			break;
+		}
+	}
+	var get = (!GET('order'))? 'ASC' : GET('order');
+	if(!GET('order')){
+		get = "ASC";
+	}else{
+		if(GET('order').toLocaleLowerCase() == "asc"){
+			get = "desc";
+		}else{
+			get = "asc";
+		}
+	}
+	var new_search = location.search;
+	if(new_search.indexOf("guest_orderby=") == -1){
+		if(new_search != ""){
+			new_search += "&";
+		}else{
+			new_search = "?";
+		}
+		new_search += "guest_orderby=" + field;
+	}
+	if(new_search.indexOf("guest_order=") == -1){
+		if(new_search != ""){
+			new_search += "&";
+		}else{
+			new_search = "?";
+		}
+		new_search += "guest_order=" + get;
+	}
+	location.search = new_search.replace(/guest_orderby=[^&$]*/i, 'guest_orderby=' + field).replace(/guest_order=[^&$]*/i, 'guest_order=' + get);
 
 });
 
