@@ -242,6 +242,7 @@ $(document).ready(function(){
 
 					$('table.list.exhibitors .editable').editable(editable_obj);
 					editable_obj['validate'] = function(value){
+						console.log(value);
 						if($.trim(value) == '') {
 							$(".emailValidationForm").modal("show");
 							return 'This field is required.'
