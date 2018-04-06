@@ -208,7 +208,7 @@ $(document).ready(function(){
 				}
 				data_build.push([
 					'<div id="edit_row" sql_id="'+ data[i]['id'] +'"></div>',
-					'<span data-val="' + data[i]['country__c'] + '">' + data[i]['confirmation_number__c'] + '</span>',
+					'<span data-val="' + data[i]['confirmation_number__c'] + '">' + data[i]['confirmation_number__c'] + '</span>',
 					'<a href="#" class="editable-dropdown" id="country__c" sql_id="' + data[i]['id'] + '" selected="' + data[i]['country__c'] + '" data-val="' + data[i]['country__c'] + '">' + data[i]['country__c'] + '</a>',
 					'<a href="#" class="editable" id="position__c" sql_id="'+ data[i]['id'] +'" data-type="text" data-title="Enter position" data-val="' + data[i]['position__c'] + '">' + data[i]['position__c'] + '</a>',
 					'<a href="#" class="editable editable-email" id="email__c" sql_id="'+ data[i]['id'] +'" data-type="text" data-title="Enter email" data-val="' + data[i]['email__c'] + '">' + data[i]['email__c'] + '</a>',
@@ -327,7 +327,7 @@ $(document).ready(function(){
 				}
 				data_build.push([
 					'<div id="edit_row" sql_id="'+ data[i]['id'] +'"></div>',
-					'<span data-val="' + data[i]['country__c'] + '">' + data[i]['confirmation_number__c'] + '</span>',
+					'<span data-val="' +data[i]['confirmation_number__c'] + '">' + data[i]['confirmation_number__c'] + '</span>',
 					'<a href="#" class="editable-dropdown" id="country__c" sql_id="' + data[i]['id'] + '" selected="' + data[i]['country__c'] + '" data-val="' + data[i]['country__c'] + '">' + data[i]['country__c'] + '</a>',
 					'<a href="#" class="editable" id="position__c" sql_id="'+ data[i]['id'] +'" data-type="text" data-title="Enter position" data-val="' + data[i]['position__c'] + '">' + data[i]['position__c'] + '</a>',
 					'<a href="#" class="editable editable-email" id="email__c" sql_id="'+ data[i]['id'] +'" data-type="text" data-title="Enter email" data-val="' + data[i]['email__c'] + '">' + data[i]['email__c'] + '</a>',
