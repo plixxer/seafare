@@ -17,7 +17,7 @@ ini_set('display_errors', 'On');
   if(!empty($_GET['orderby']) && !empty($_GET['order'])){
     $options = Array(
       "ascdesc"=>Array($_GET['orderby'], $_GET['order'])
-    )
+    );
   }
 
   $exh_data = $db->getall('salesforce.attendee__c',
