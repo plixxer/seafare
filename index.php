@@ -726,6 +726,10 @@ $(document).on("click", ".list.exhibitors div#edit_row", function( event ) {
 	$(this).closest("table tr").find("[data-val]").each(function(key, val){
 		data[$(this).attr("id")] = $(this).attr("data-val");
 	});
+	$.get( "partials/edit_row_modal", function(response) {
+		$(".edit_row_modal").html(response);
+		$("#editRow").modal({backdrop: 'static', keyboard: false});
+	});
 	console.log(data);
 });
 
