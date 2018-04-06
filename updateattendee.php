@@ -19,8 +19,7 @@
 			"first_name__c"=> $_POST["data"]["firstname"]
 		),
 		Array(
-			"id"=>$_POST['sql_id'],
-			'Company__c'=>$_POST['account_id']
+			"id"=>$_POST['sql_id']
 		)
 	);
 	echo 1;
