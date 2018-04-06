@@ -21,7 +21,8 @@
 			"remove__c"=>false
 		),
 		Array(
-			"id"=>$_POST['sql_id']
+			"id"=>$_POST['sql_id'],
+			'Company__c'=>$_POST['account_id']
 		)
 	);
 	echo 1;
