@@ -787,7 +787,7 @@ $(document).on("submit", "#editRow form.needs-validation", function( event ) {
 		form_data[this.name] = this.value;
 	});
     if(this.checkValidity() !== false){
-    	console.log("updateattendee");
+    	console.log(form_data);
 		$.ajax({
 			type: "POST",
 			url: 'updateattendee',
@@ -797,7 +797,7 @@ $(document).on("submit", "#editRow form.needs-validation", function( event ) {
 				console.log(response);
 				if(response == 1){
 					$("#editRow").modal("hide");
-					location.reload();
+					//location.reload();
 				}
 				console.log(response);
 			},
