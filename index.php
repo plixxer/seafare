@@ -727,7 +727,7 @@ $(document).on("click", ".list.exhibitors div#edit_row", function( event ) {
 		data[$(this).attr("id")] = $(this).attr("data-val");
 	});
 	$.get( "partials/edit_row_modal", function(response) {
-		$(".edit_row_modal").html(response);
+		$(".edit_row_modal_container").html(response);
 		$("#editRow").modal({backdrop: 'static', keyboard: false});
 	});
 	console.log(data);
@@ -769,6 +769,7 @@ function validateEmail(email) {
 	</script>
 </head>
 <body>
+<div class="edit_row_modal_container"></div>
 <!-- Attendee Modal -->
 <div class="modal fade addform" id="AttendeeForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
