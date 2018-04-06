@@ -792,6 +792,7 @@ $(document).on("submit", "#editRow form.needs-validation", function( event ) {
 			url: 'https://gentle-dawn-65313.herokuapp.com/updateattendee',
 			data: {"account_id":GET("id"), 'data': form_data},
 			success: function(response){
+				console.log(response);
 				if(response == 2){
 					$("#editRow").modal("hide");
 					$(".warningForm").modal("show");
