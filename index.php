@@ -241,11 +241,11 @@ $(document).ready(function(){
 					editable_obj['validate'] = function(value){
 						if($.trim(value) == '') {
 							$(".emailValidationForm").modal("show");
-							return 'This field is required.'
+							return false;
 						}else if(!validateEmail($.trim(value))){
 							$(".emailValidationForm").modal("show");
 							console.log('not valid email');
-						}	return 'This is not a valid email';
+						}	return false;
 					};
 					$('table.list.exhibitors .editable-email').editable(editable_obj);
 
@@ -360,14 +360,14 @@ $(document).ready(function(){
 				        }
 					};
 					$('table.list.guests .editable').editable(editable_obj);
-					editable_obj['validate'] = function(){
+					editable_obj['validate'] = function(value){
 						if($.trim(value) == '') {
 							$(".emailValidationForm").modal("show");
-							return 'This field is required.'
+							return false;
 						}else if(!validateEmail($.trim(value))){
 							$(".emailValidationForm").modal("show");
 							console.log('not valid email');
-						}	return 'This is not a valid email';
+						}	return false;
 					};
 					$('table.list.guests .editable-email').editable(editable_obj);
 
