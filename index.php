@@ -157,6 +157,7 @@ $(window).load(function(){
 $.fn.editable.defaults.mode = 'inline';
 $.fn.editable.defaults.showbuttons = false;
 $.fn.editable.defaults.onblur = "submit";
+var countries;
 
 $(document).ready(function(){
 
@@ -427,7 +428,6 @@ $(document).ready(function(){
 			});
 		}
 	});
-	var countries;
 	$.ajax({
 		type: "GET",
 		url: 'https://gentle-dawn-65313.herokuapp.com/getcountries',
