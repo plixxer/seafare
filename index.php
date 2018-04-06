@@ -721,12 +721,13 @@ $(document).on("click", ".list.guests th", function( event ) {
 });
 
 $(document).on("click", ".list.exhibitors div#edit_row", function( event ) {
-	var data_ = Array();
+	var data_ = {};
 	data_['sql_id'] = $(this).attr('sql_id');
 	data_['attendeetype'] = "Exhibitor";
 	$(this).closest("table tr").find("[data-val]").each(function(key, val){
 		data_[$(this).attr("id")] = $(this).attr("data-val");
 	});
+	console.log(data_);
 	$.ajax({
 		url: "partials/edit_row_modal",
 		type: "get", //send it through get method
@@ -736,16 +737,16 @@ $(document).on("click", ".list.exhibitors div#edit_row", function( event ) {
 			$("#editRow").modal({backdrop: 'static', keyboard: false});
 		}
 	});
-	console.log(data_);
 });
 
 $(document).on("click", ".list.guests div#edit_row", function( event ) {
-	var data_ = Array();
+	var data_ = {};
 	data_['sql_id'] = $(this).attr('sql_id');
 	data_['attendeetype'] = "Guest";
 	$(this).closest("table tr").find("[data-val]").each(function(key, val){
 		data_[$(this).attr("id")] = $(this).attr("data-val");
 	});
+	console.log(data_);
 	$.ajax({
 		url: "partials/edit_row_modal",
 		type: "get", //send it through get method
@@ -755,7 +756,6 @@ $(document).on("click", ".list.guests div#edit_row", function( event ) {
 			$("#editRow").modal({backdrop: 'static', keyboard: false});
 		}
 	});
-	console.log(data_);
 });
 
 function list_build(header, data){//obj, arr of obj
