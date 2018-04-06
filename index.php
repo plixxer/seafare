@@ -793,10 +793,7 @@ $(document).on("submit", "#editRow form.needs-validation", function( event ) {
 			data: {"account_id":GET("id"), 'data': form_data},
 			success: function(response){
 				console.log(response);
-				if(response == 2){
-					$("#editRow").modal("hide");
-					$(".warningForm").modal("show");
-				}else if(response == 1){
+				if(response == 1){
 					$("#editRow").modal("hide");
 					location.reload();
 				}

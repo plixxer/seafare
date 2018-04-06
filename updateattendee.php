@@ -27,6 +27,7 @@
 			"id"=>$_POST['sql_id']
 		)
 	);
+	echo 1;
 	
 
 function out($arr){
