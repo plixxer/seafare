@@ -737,7 +737,11 @@ $(document).on("click", ".list.exhibitors div#edit_row", function( event ) {
 	  		$(".edit_row_modal_container").html(response);
 	  		for(var key in countries){
 				$('select[name="country"]').each(function(){
-					$(this).append("<option value='" + countries[key] + "'>"+ countries[key] +"</option>");
+					if(countries[key] == data_['country__c']){
+						$(this).append("<option value='" + countries[key] + "' selected>"+ countries[key] +"</option>");
+					}else{
+						$(this).append("<option value='" + countries[key] + "'>"+ countries[key] +"</option>");
+					}
 				});
 			}
 			$("#editRow").modal({backdrop: 'static', keyboard: false});
@@ -761,7 +765,11 @@ $(document).on("click", ".list.guests div#edit_row", function( event ) {
 	  		$(".edit_row_modal_container").html(response);
 	  		for(var key in countries){
 				$('select[name="country"]').each(function(){
-					$(this).append("<option value='" + countries[key] + "'>"+ countries[key] +"</option>");
+					if(countries[key] == data_['country__c']){
+						$(this).append("<option value='" + countries[key] + "' selected>"+ countries[key] +"</option>");
+					}else{
+						$(this).append("<option value='" + countries[key] + "'>"+ countries[key] +"</option>");
+					}
 				});
 			}
 			$("#editRow").modal({backdrop: 'static', keyboard: false});
