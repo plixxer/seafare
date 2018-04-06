@@ -243,7 +243,7 @@ $(document).ready(function(){
 							$(".emailValidationForm").modal("show");
 						}else if(!validateEmail($.trim(value))){
 							$(".emailValidationForm").modal("show");
-							console.log('not valid email');\
+							console.log('not valid email');
 					};
 					$('table.list.exhibitors .editable-email').editable(editable_obj);
 
@@ -951,6 +951,6 @@ function validateEmail(email) {
 		</div>
 	</div>
 </div>
-version 3
+version 4
 </body>
 </html>
