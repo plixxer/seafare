@@ -14,9 +14,9 @@ ini_set('display_errors', 'On');
   $db = new _database(0x0);
 
   $options= Arrat();
-  if(!empty($_POST['orderby']) && !empty($_POST['order'])){
+  if(!empty($_GET['orderby']) && !empty($_GET['order'])){
     $options = Array(
-      "ascdesc"=>Array($_POST['orderby'], $_POST['order'])
+      "ascdesc"=>Array($_GET['orderby'], $_GET['order'])
     )
   }
 
@@ -34,7 +34,7 @@ ini_set('display_errors', 'On');
       "remove__c"
     ),
     Array(
-      'company__c'=>$_POST['account_id'],
+      'company__c'=>$_GET['account_id'],
       'attendee_type__c'=>'Exhibitor',
       'remove__c'=>false
     ),
