@@ -683,7 +683,7 @@ $(document).on("click", ".list.guests th", function( event ) {
 	if(!GET('guest_order')){
 		get = "ASC";
 	}else{
-		if(GET('order').toLocaleLowerCase() == "asc"){
+		if(GET('guest_order').toLocaleLowerCase() == "asc"){
 			get = "desc";
 		}else{
 			get = "asc";
