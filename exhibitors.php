@@ -1,3 +1,7 @@
+<?php
+error_reporting(E_ALL);
+ini_set('display_errors', 'On');
+?>
 <?php include ('config/config.php') ?>
 <?php include ('php/objects/_database.php') ?>
 
