@@ -9,7 +9,7 @@
 
 	$db = new _database(0x0);
 
-	$db->getall(
+	$db->getall("salesforce.attendee__c",
 		Array(
 			'*'
 		),
