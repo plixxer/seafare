@@ -562,7 +562,7 @@ $(document).on("click", ".addform .save", function( event ) {
 });
 
   // Email validation.
-$(document).on('change', '.needs-validation input[type="email"]', function() {
+$(document).on('change, blur', '.needs-validation input[type="email"]', function() {
 	var email = $(this);
 	if (email.is(':invalid')) {
 		email.removeClass('is-valid').addClass('is-invalid');
@@ -571,13 +571,13 @@ $(document).on('change', '.needs-validation input[type="email"]', function() {
 		email.removeClass('is-invalid').addClass('is-valid');
 	}
 });
-$(document).on('change', '.needs-validation input.required', function() {
+$(document).on('change, blur', '.needs-validation input.required', function() {
 	var text = $(this);
-	if (email.length == 0) {
-		email.removeClass('is-valid').addClass('is-invalid');
-		email.siblings(".invalid-feedback").text(email.prop("validationMessage"))
+	if (text.length == 0) {
+		text.removeClass('is-valid').addClass('is-invalid');
+		text.siblings(".invalid-feedback").text(email.prop("validationMessage"))
 	} else {
-		email.removeClass('is-invalid').addClass('is-valid');
+		text.removeClass('is-invalid').addClass('is-valid');
 	}
 });
 
