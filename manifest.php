@@ -16,9 +16,8 @@
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.full.min.js"></script>
 
-	<link href="https://zikula.github.io/bootstrap-docs/assets/font-awesome/css/font-awesome.min.css" rel="stylesheet" />
-
 	<script src="js/country_regions.js"></script>
+	<script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
 
 <style type="text/css">
 
@@ -215,7 +214,7 @@ $(document).ready(function(){
 					'<a href="#" class="editable" id="last_name__c" sql_id="'+ data[i]['id'] +'" data-type="text" data-title="Enter last name" data-val="' + data[i]['last_name__c'] + '">' + data[i]['last_name__c'] + '</a>',
 					'<a href="#" class="editable" id="first_name__c" sql_id="'+ data[i]['id'] +'" data-type="text" data-title="Enter first name" data-val="' + data[i]['first_name__c'] + '">' + data[i]['first_name__c'] + '</a>',
 					'<input class="remove-user" sql_id="' + data[i]['id'] + '" type="checkbox" value="1" />',
-					'<div id="edit_row" sql_id="'+ data[i]['id'] +'"></div>',
+					'<div id="edit_row" sql_id="'+ data[i]['id'] +'"><i class="fas fa-edit"></i></div>',
 				]);
 			}
 					var lb = list_build(
@@ -334,7 +333,7 @@ $(document).ready(function(){
 					'<a href="#" class="editable" id="last_name__c" sql_id="'+ data[i]['id'] +'" data-type="text" data-title="Enter last name" data-val="' + data[i]['last_name__c'] + '">' + data[i]['last_name__c'] + '</a>',
 					'<a href="#" class="editable" id="first_name__c" sql_id="'+ data[i]['id'] +'" data-type="text" data-title="Enter first name" data-val="' + data[i]['first_name__c'] + '">' + data[i]['first_name__c'] + '</a>',
 					'<input class="remove-user" sql_id="' + data[i]['id'] + '" type="checkbox" value="1" />',
-					'<div id="edit_row" sql_id="'+ data[i]['id'] +'"></div>'
+					'<div id="edit_row" sql_id="'+ data[i]['id'] +'"><i class="fas fa-edit"></i></div>'
 				]);
 			}
 					var lb = list_build(
