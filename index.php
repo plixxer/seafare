@@ -25,6 +25,41 @@
 
 
 	</style>
+
+<script type="text/javascript">
+	$(document).on("submit", ".recaptchaform form", function( event ) {
+		event.preventDefault();
+	    event.stopPropagation();
+		var $form = $(this).parents(".recaptchaform").find("form");
+	    var form_data = { };
+		$.each($form.serializeArray(), function() {
+			form_data[this.name] = this.value;
+		});
+		if(Object.keys(form_data).length > 0){
+			$.ajax({
+				type: "POST",
+				url: 'https://gentle-dawn-65313.herokuapp.com/recaptchavalidate',
+				data: form_data,
+				success: function(response){
+					if(response == 1){
+						$(".recaptchaform").modal("hide");
+					}
+				},
+				error: function(response){
+					console.log(response);
+				},
+				dataType: 'json'
+			});
+		}
+  });
+
+
+
+$(document).on("click", ".recaptchaform .submit", function( event ) {
+	var $form = $(this).parents(".recaptchaform").find("form");
+	$form.trigger("submit");
+});
+</script>
 </head>
 <body>
 <!-- recaptcha Modal -->
