@@ -64,6 +64,7 @@
 								'callback' : verifyCallback,
 								'theme' : 'light'
 							});
+							window.location = "manifest" + window.location.search;
 							console.log(response);
 						},
 						error: function(response){
