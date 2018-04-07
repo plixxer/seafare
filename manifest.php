@@ -1096,7 +1096,7 @@ function validateEmail(email) {
 						
 			<!-- Modal Body -->
 			<div class="modal-body">
-				<p>Please enter a valid email.</p>
+				<p>Invalid input.</p>
 			</div>
 			<!-- Modal Footer -->
 			<div class="modal-footer">
