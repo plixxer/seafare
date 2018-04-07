@@ -1007,6 +1007,10 @@ function validateEmail(email) {
 						data: {},
 						success: function(response){
 							if(response != 1){
+								window.location = "captcha" + window.location.search;
+							}
+							/*
+							if(response != 1){
 								$('.recaptchaform').modal({backdrop: 'static', keyboard: false})
 							}
 							grecaptcha.render('recaptcha', {
@@ -1015,6 +1019,7 @@ function validateEmail(email) {
 								'theme' : 'light'
 							});
 							console.log(response);
+							*/
 						},
 						error: function(response){
 							console.log(response);
