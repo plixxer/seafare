@@ -932,14 +932,14 @@ function validateEmail(email) {
 				<form role="form" class="needs-validation" novalidate>
 					<div class="form-group">
 						<label for="firstnameinput">First Name</label>
-						<input type="text" class="form-control" id="firstnameinput" placeholder="enter first name"/>
+						<input type="text" name="firstname"  class="form-control" id="firstnameinput" placeholder="enter first name"/>
 						<div class="invalid-feedback">
         				  Please provide a first name.
         				</div>
 					</div>
 					<div class="form-group">
 						<label for="lastnameinput">Last Name</label>
-						<input type="text" class="form-control" id="lastnameinput" placeholder="enter last name"/>
+						<input type="text" name="lastname" class="form-control" id="lastnameinput" placeholder="enter last name"/>
 						<div class="invalid-feedback">
         				   Please provide a last name.
         				</div>
