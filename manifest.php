@@ -961,7 +961,7 @@ function validateEmail(email) {
 					</div>
 					<div class="form-group">
 						<label for="positioninput">Position</label>
-						<input type="text" class="form-control" id="positioninput" placeholder="enter position"/>
+						<input type="text" name="position" class="form-control" id="positioninput" placeholder="enter position"/>
 						<div class="invalid-feedback">
         				  Please provide a position.
         				</div>
