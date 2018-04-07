@@ -14,9 +14,9 @@ error_reporting(E_ALL ^ E_NOTICE);
 
   $db = new _database(0x0);
 
-  $options= Array();
+  $optional= Array();
   if(!empty($_POST['orderby']) && !empty($_POST['order'])){
-    $options = Array(
+    $optional = Array(
       "ascdesc"=>Array($_POST['orderby'], $_POST['order'])
     );
   }

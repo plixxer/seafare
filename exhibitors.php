@@ -16,7 +16,7 @@ error_reporting(E_ALL ^ E_NOTICE);
 
 	$optional= Array();
 	if(!empty($_POST['orderby']) && !empty($_POST['order'])){
-		$options = Array(
+		$optional = Array(
 			"ascdesc"=>Array($_POST['orderby'], $_POST['order'])
 		);
 	}
