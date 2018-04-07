@@ -20,7 +20,7 @@
 			"position__c"=>				$_POST['data']['position']
 		),
 		Array(
-			"id"=>$_POST['data']['sql_id']
+			"sfid"=>$_POST['data']['sql_id']
 		)
 	);
 

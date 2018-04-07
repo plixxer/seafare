@@ -14,7 +14,7 @@
       $_POST['field'] => $_POST['value']
     ),
     Array(
-      'id'=>$_POST['id']
+      'sfid'=>$_POST['sfid']
     )
   );
   print_r(json_encode($exh_data, true));

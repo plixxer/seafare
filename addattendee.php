@@ -20,7 +20,7 @@
 	);
 	$exh_data = $db->getall('salesforce.attendee__c',
 		Array(
-			"id"
+			"sfid"
 		),
 		Array(
 			'Company__c'=>$_POST['account_id'],
@@ -31,7 +31,7 @@
 
 	$guest_data = $db->getall('salesforce.attendee__c',
 		Array(
-			"id"
+			"sfid"
 		),
 		Array(
 			'Company__c'=>$_POST['account_id'],

@@ -18,7 +18,7 @@
 
   $exh_data = $db->getall('salesforce.attendee__c',
     Array(
-      "id",
+      "sfid",
       "attendee_type__c",
       "company__c",
       "confirmation_number__c",
