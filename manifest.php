@@ -571,6 +571,15 @@ $(document).on('change', '.needs-validation input[type="email"]', function() {
 		email.removeClass('is-invalid').addClass('is-valid');
 	}
 });
+$(document).on('change', '.needs-validation input.required', function() {
+	var text = $(this);
+	if (email.length == 0) {
+		email.removeClass('is-valid').addClass('is-invalid');
+		email.siblings(".invalid-feedback").text(email.prop("validationMessage"))
+	} else {
+		email.removeClass('is-invalid').addClass('is-valid');
+	}
+});
 
 
 
@@ -876,14 +885,14 @@ function validateEmail(email) {
 				<form role="form" class="needs-validation" novalidate>
 					<div class="form-group">
 						<label for="firstnameinput">First Name</label>
-						<input type="text" name="firstname" class="form-control" id="firstnameinput" placeholder="enter first name"/>
+						<input type="text" name="firstname" class="form-control required" id="firstnameinput" placeholder="enter first name"/>
 						<div class="invalid-feedback">
         				  Please provide a first name.
         				</div>
 					</div>
 					<div class="form-group">
 						<label for="lastnameinput">Last Name</label>
-						<input type="text" name="lastname" class="form-control" id="lastnameinput" placeholder="enter last name"/>
+						<input type="text" name="lastname" class="form-control required" id="lastnameinput" placeholder="enter last name"/>
 						<div class="invalid-feedback">
         				   Please provide a last name.
         				</div>
@@ -942,14 +951,14 @@ function validateEmail(email) {
 				<form role="form" class="needs-validation" novalidate>
 					<div class="form-group">
 						<label for="firstnameinput">First Name</label>
-						<input type="text" name="firstname"  class="form-control" id="firstnameinput" placeholder="enter first name"/>
+						<input type="text" name="firstname"  class="form-control required" id="firstnameinput" placeholder="enter first name" required/>
 						<div class="invalid-feedback">
         				  Please provide a first name.
         				</div>
 					</div>
 					<div class="form-group">
 						<label for="lastnameinput">Last Name</label>
-						<input type="text" name="lastname" class="form-control" id="lastnameinput" placeholder="enter last name"/>
+						<input type="text" name="lastname" class="form-control required" id="lastnameinput" placeholder="enter last name" required/>
 						<div class="invalid-feedback">
         				   Please provide a last name.
         				</div>
