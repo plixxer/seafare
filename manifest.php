@@ -256,7 +256,7 @@ $(document).ready(function(){
 							return 'This field is required.'
 						}
 					};
-					$('table.list.exhibitors .editable').editable(editable_obj);
+					$('table.list.exhibitors .editable:not(.editable-email)').editable(editable_obj);
 					editable_obj['validate'] = function(value){
 						console.log(value);
 						if($.trim(value) == '') {
@@ -387,7 +387,7 @@ $(document).ready(function(){
 							return 'This field is required.'
 						}
 					};
-					$('table.list.guests .editable').editable(editable_obj);
+					$('table.list.guests .editable:not(.editable-email)').editable(editable_obj);
 					editable_obj['validate'] = function(value){
 						if($.trim(value) == '') {
 							$(".emailValidationForm").modal("show");
