@@ -206,7 +206,7 @@ class _database extends _globals{
 			);
 			$vars['condStr'] = "WHERE (" . $vars['condParse']['key?:keyStr'] . ")";
 			$sql = "SELECT " . implode(',', $values) . " FROM " . $table . " " . (($conditions != null)? $vars['condStr']: "") . (($args['ascdesc'] != null)? " ORDER BY " . $args['ascdesc'][0] . " " . $args['ascdesc'][1] : "") . (($args['limit'] != null)? " LIMIT " . $args['limit']: "");
-			echo '<br>SQL: ' . $sql . "</br>";
+			//echo '<br>SQL: ' . $sql . "</br>";
 			if($args['do_not_call']){
 				return [$sql, $vars['condParse']['params']];
 			}else{
