@@ -262,7 +262,7 @@ $(document).ready(function(){
 						if($.trim(value) == '') {
 							$(".emailValidationForm").modal("show");
 							return 'This field is required.'
-						}else if(validateEmail($.trim(value))){
+						}else if(!validateEmail($.trim(value))){
 							$(".emailValidationForm").modal("show");
 							console.log('not valid email');
 							return 'This is not a valid email';
@@ -392,7 +392,7 @@ $(document).ready(function(){
 						if($.trim(value) == '') {
 							$(".emailValidationForm").modal("show");
 							return 'This field is required.'
-						}else if(validateEmail($.trim(value))){
+						}else if(!validateEmail($.trim(value))){
 							$(".emailValidationForm").modal("show");
 							console.log('not valid email');
 							return 'This is not a valid email';
