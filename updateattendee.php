@@ -34,7 +34,13 @@
 
 	echo $db->update("salesforce.attendee__c",
 		Array(
-			"first_name__c"=> "Johnny"
+			"attendee_type__c"=>"attendee_type__c",
+			"company__c"=>"company__c",
+			"country__c"=>"country__c",
+			"email__c"=>"email__c",
+			"first_name__c"=>"first_name__c",
+			"last_name__c"=>"last_name__c",
+			"position__c"=>"position__c"
 		),
 		Array(
 			"id"=>$_GET['sql_id']
