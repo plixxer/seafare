@@ -1,3 +1,8 @@
+
+<?php
+ini_set('display_errors', 1);
+error_reporting(E_ALL ^ E_NOTICE);
+?>
 <?php include ('config/config.php') ?>
 <?php include ('php/objects/_database.php') ?>
 
@@ -30,7 +35,7 @@
       "remove__c"
     ),
     Array(
-      Array("company__c","=",$_POST['account_id']),
+      Array("company__c","=",$_GET['account_id']),
       Array("attendee_type__c","=",'Exhibitor'),
       Array("remove__c","=",false),
       Array("_hc_lastop","!=",'FAILED')
