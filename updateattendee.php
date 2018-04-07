@@ -9,6 +9,9 @@
 
 	$db = new _database(0x0);
 
+
+	echo "test";
+
 	$db->getall("salesforce.attendee__c",
 		Array(
 			'*'
