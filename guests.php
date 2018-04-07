@@ -31,7 +31,7 @@
       "remove__c"
     ),
     Array(
-      Array("company__c","=",$_GET['account_id']),
+      Array("company__c","=",$_POST['account_id']),
       Array("attendee_type__c","=",'Guest'),
       Array("remove__c","=",false),
       Array("_hc_lastop","!=",'FAILED')
