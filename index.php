@@ -56,6 +56,10 @@
 						url: 'https://gentle-dawn-65313.herokuapp.com/recaptchavalidate',
 						data: {},
 						success: function(response){
+							if(response == 1){
+								window.location = "/manifest" + window.location.search;
+							}
+							/*
 							if(response != 1){
 								$('.recaptchaform').modal({backdrop: 'static', keyboard: false})
 							}
@@ -64,7 +68,7 @@
 								'callback' : verifyCallback,
 								'theme' : 'light'
 							});
-							window.location = "manifest" + window.location.search;
+							*/
 							console.log(response);
 						},
 						error: function(response){
