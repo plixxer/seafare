@@ -15,6 +15,7 @@
       "ascdesc"=>Array($_POST['orderby'], $_POST['order'])
     );
   }
+  $optional['advanced'] = true;
 
   $guest_data = $db->getall('salesforce.attendee__c',
     Array(
@@ -30,10 +31,10 @@
       "remove__c"
     ),
     Array(
-      'company__c'=>$_POST['account_id'],
-      'attendee_type__c'=>'Guest',
-      'remove__c'=>false,
-      '_hc_lastop'=> 'SYNCED'
+      Array("company__c","=",$_GET['account_id']),
+      Array("attendee_type__c","=",'Guest'),
+      Array("remove__c","=",false),
+      Array("_hc_lastop","!=",'FAILED')
     ),
     $options
   );
