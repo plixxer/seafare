@@ -9,31 +9,6 @@
 
 	$db = new _database(0x0);
 
-/*
-
-	echo "test";
-
-	$t = $db->getall("salesforce.attendee__c",
-		Array(
-			"attendee_type__c",
-			"company__c",
-			"country__c",
-			"email__c",
-			"first_name__c",
-			"last_name__c",
-			"position__c"
-		),
-		Array(
-			'id'=>$_GET['sql_id']
-		)
-	);
-
-	out($t);
-
-
-	echo "update<br>";
-	*/
-
 	echo $db->update("salesforce.attendee__c",
 		Array(
 			"attendee_type__c"=>		$_POST['data']['attendeetype'],
