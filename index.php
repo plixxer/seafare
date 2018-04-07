@@ -56,6 +56,7 @@
 						url: 'https://gentle-dawn-65313.herokuapp.com/recaptchavalidate',
 						data: {},
 						success: function(response){
+							console.log(response);
 							if(response == 1){
 								window.location = "/manifest" + window.location.search;
 							}else{
