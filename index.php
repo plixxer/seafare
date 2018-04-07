@@ -219,7 +219,7 @@ $(document).ready(function(){
 				]);
 			}
 					var lb = list_build(
-				['Remove?', 'First Name', 'Last Name', 'Email', 'Position', 'Country/Region', 'Confirmation Number', 'Edit Row'],
+				['Edit Row', 'Remove?', 'First Name', 'Last Name', 'Email', 'Position', 'Country/Region', 'Confirmation Number'],
 				data_build
 			);
 			$('table.list.exhibitors thead').html(
@@ -338,7 +338,7 @@ $(document).ready(function(){
 				]);
 			}
 					var lb = list_build(
-				['Remove?', 'First Name', 'Last Name', 'Email', 'Position', 'Country/Region', 'Confirmation Number', 'Edit Row'],
+				['Edit Row', 'Remove?', 'First Name', 'Last Name', 'Email', 'Position', 'Country/Region', 'Confirmation Number'],
 				data_build
 			);
 
