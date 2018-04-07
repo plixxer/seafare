@@ -12,7 +12,7 @@
 
 	echo "test";
 
-	$db->getall("salesforce.attendee__c",
+	$t = $db->getall("salesforce.attendee__c",
 		Array(
 			'*'
 		),
@@ -20,6 +20,8 @@
 			'id'=>$_GET['sql_id']
 		)
 	);
+
+	out($t);
 
 	/*
 
