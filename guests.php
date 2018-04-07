@@ -32,7 +32,8 @@
     Array(
       'company__c'=>$_POST['account_id'],
       'attendee_type__c'=>'Guest',
-      'remove__c'=>false
+      'remove__c'=>false,
+      '_hc_lastop'=> 'SYNCED'
     ),
     $options
   );

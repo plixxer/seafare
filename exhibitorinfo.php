@@ -19,7 +19,8 @@
       "cy_additional_attendees__c"
     ), Array(
       "sfid"=> $_POST['account_id'],
-      "isdeleted" => false
+      "isdeleted" => false,
+      '_hc_lastop'=> 'SYNCED'
     )
   );
 
@@ -30,7 +31,8 @@
     Array(
       'Company__c'=>$_POST['account_id'],
       'Attendee_Type__c'=>'Guest',
-      'Remove__c'=>false
+      'Remove__c'=>false,
+      '_hc_lastop'=> 'SYNCED'
     )
   );
 
@@ -41,7 +43,8 @@
     Array(
       'Company__c'=>$_POST['account_id'],
       'Attendee_Type__c'=>'Exhibitor',
-      'Remove__c'=>false
+      'Remove__c'=>false,
+      '_hc_lastop'=> 'SYNCED'
     )
   );
 
