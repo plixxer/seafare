@@ -381,14 +381,14 @@ $(document).ready(function(){
 				            $('.emailValidationForm').modal('show');
 				        }
 					};
-					editable_obj['validate'] = function(){
+					editable_obj['validate'] = function(value){
 						if($.trim(value) == '') {
 							$(".emailValidationForm").modal("show");
 							return 'This field is required.'
 						}
 					};
 					$('table.list.guests .editable').editable(editable_obj);
-					editable_obj['validate'] = function(){
+					editable_obj['validate'] = function(value){
 						if($.trim(value) == '') {
 							$(".emailValidationForm").modal("show");
 							return 'This field is required.'
@@ -849,8 +849,7 @@ function GET(name, url) {
 		return decodeURIComponent(results[2].replace(/\+/g, " "));
 }
 function validateEmail(email) {
-    var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    return re.test(String(email));
+    return email.includes("@");
 }
 
 	</script>
