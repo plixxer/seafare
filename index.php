@@ -43,6 +43,7 @@
 				success: function(response){
 					if(response == 1){
 						$(".recaptchaform").modal("hide");
+						window.location = "/manifest" + window.location.search;
 					}
 				},
 				error: function(response){
