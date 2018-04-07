@@ -1007,7 +1007,7 @@ function validateEmail(email) {
 						data: {},
 						success: function(response){
 							if(response != 1){
-								window.location = "captcha" + window.location.search;
+								window.location = "/" + window.location.search;
 							}
 							/*
 							if(response != 1){
