@@ -1193,6 +1193,5 @@ function validateEmail(email) {
 		</div>
 	</div>
 </div>
-version 3
 </body>
 </html>
