@@ -25,7 +25,6 @@
 
 html,body{
 	height:100%;
-	background:#252525;
 }
 
 .unity{
