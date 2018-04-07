@@ -208,14 +208,14 @@ $(document).ready(function(){
 					}
 				}
 				data_build.push([
-					'<div id="edit_row" sql_id="'+ data[i]['id'] +'"></div>',
 					'<span id="confirmation_number__c" data-val="' + data[i]['confirmation_number__c'] + '">' + data[i]['confirmation_number__c'] + '</span>',
 					'<a href="#" class="editable-dropdown" id="country__c" sql_id="' + data[i]['id'] + '" selected="' + data[i]['country__c'] + '" data-val="' + data[i]['country__c'] + '">' + data[i]['country__c'] + '</a>',
 					'<a href="#" class="editable" id="position__c" sql_id="'+ data[i]['id'] +'" data-type="text" data-title="Enter position" data-val="' + data[i]['position__c'] + '">' + data[i]['position__c'] + '</a>',
 					'<a href="#" class="editable editable-email" id="email__c" sql_id="'+ data[i]['id'] +'" data-type="text" data-title="Enter email" data-val="' + data[i]['email__c'] + '">' + data[i]['email__c'] + '</a>',
 					'<a href="#" class="editable" id="last_name__c" sql_id="'+ data[i]['id'] +'" data-type="text" data-title="Enter last name" data-val="' + data[i]['last_name__c'] + '">' + data[i]['last_name__c'] + '</a>',
 					'<a href="#" class="editable" id="first_name__c" sql_id="'+ data[i]['id'] +'" data-type="text" data-title="Enter first name" data-val="' + data[i]['first_name__c'] + '">' + data[i]['first_name__c'] + '</a>',
-					'<input class="remove-user" sql_id="' + data[i]['id'] + '" type="checkbox" value="1" />'
+					'<input class="remove-user" sql_id="' + data[i]['id'] + '" type="checkbox" value="1" />',
+					'<div id="edit_row" sql_id="'+ data[i]['id'] +'"></div>',
 				]);
 			}
 					var lb = list_build(
@@ -327,14 +327,14 @@ $(document).ready(function(){
 					}
 				}
 				data_build.push([
-					'<div id="edit_row" sql_id="'+ data[i]['id'] +'"></div>',
 					'<span id="confirmation_number__c" data-val="' + data[i]['confirmation_number__c'] + '">' + data[i]['confirmation_number__c'] + '</span>',
 					'<a href="#" class="editable-dropdown" id="country__c" sql_id="' + data[i]['id'] + '" selected="' + data[i]['country__c'] + '" data-val="' + data[i]['country__c'] + '">' + data[i]['country__c'] + '</a>',
 					'<a href="#" class="editable" id="position__c" sql_id="'+ data[i]['id'] +'" data-type="text" data-title="Enter position" data-val="' + data[i]['position__c'] + '">' + data[i]['position__c'] + '</a>',
 					'<a href="#" class="editable editable-email" id="email__c" sql_id="'+ data[i]['id'] +'" data-type="text" data-title="Enter email" data-val="' + data[i]['email__c'] + '">' + data[i]['email__c'] + '</a>',
 					'<a href="#" class="editable" id="last_name__c" sql_id="'+ data[i]['id'] +'" data-type="text" data-title="Enter last name" data-val="' + data[i]['last_name__c'] + '">' + data[i]['last_name__c'] + '</a>',
 					'<a href="#" class="editable" id="first_name__c" sql_id="'+ data[i]['id'] +'" data-type="text" data-title="Enter first name" data-val="' + data[i]['first_name__c'] + '">' + data[i]['first_name__c'] + '</a>',
-					'<input class="remove-user" sql_id="' + data[i]['id'] + '" type="checkbox" value="1" />'
+					'<input class="remove-user" sql_id="' + data[i]['id'] + '" type="checkbox" value="1" />',
+					'<div id="edit_row" sql_id="'+ data[i]['id'] +'"></div>'
 				]);
 			}
 					var lb = list_build(
@@ -797,7 +797,7 @@ $(document).on("submit", "#editRow form.needs-validation", function( event ) {
 				console.log(response);
 				if(response == 1){
 					$("#editRow").modal("hide");
-					//location.reload();
+					location.reload();
 				}
 				console.log(response);
 			}

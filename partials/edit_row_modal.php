@@ -1,6 +1,3 @@
-<?php
-	print_r($_GET);
-?>
 <!-- edit row Modal -->
 <div class="modal fade editRow" id="editRow" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
