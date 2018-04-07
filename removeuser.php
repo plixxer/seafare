@@ -18,10 +18,10 @@ foreach ($ids as $key => $value) {
 		$db->remove(
 			'salesforce.attendee__c',
 			Array(
-				'sfid'=>intval($value)
+				'sfid'=>$value
 			)
 		)
 	);
 }
-print_r(json_encode($ids, true));
+print_r(json_encode($datas, true));
 ?>
