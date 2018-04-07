@@ -136,12 +136,12 @@ ul.noli > li{
     margin: 0;
 }
 div#edit_row{
-    background: #428bca;
-    border: 4px solid #347ab5;
-    width: 10px;
     padding: 6px;
-    margin: 0 auto;
     cursor:pointer;
+    color:#428bca;
+}
+div#edit_row:hover{
+	color:#0056b3;
 }
 </style>
 	<script>
