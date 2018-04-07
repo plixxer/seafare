@@ -249,7 +249,13 @@ $(document).ready(function(){
 							console.log("error");
 						}
 					};
-
+					editable_obj['validate'] = function(value){
+						console.log(value);
+						if($.trim(value) == '') {
+							$(".emailValidationForm").modal("show");
+							return 'This field is required.'
+						}
+					};
 					$('table.list.exhibitors .editable').editable(editable_obj);
 					editable_obj['validate'] = function(value){
 						console.log(value);
@@ -374,6 +380,12 @@ $(document).ready(function(){
 				            }
 				            $('.emailValidationForm').modal('show');
 				        }
+					};
+					editable_obj['validate'] = function(){
+						if($.trim(value) == '') {
+							$(".emailValidationForm").modal("show");
+							return 'This field is required.'
+						}
 					};
 					$('table.list.guests .editable').editable(editable_obj);
 					editable_obj['validate'] = function(){
