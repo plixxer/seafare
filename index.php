@@ -58,9 +58,7 @@
 						success: function(response){
 							if(response == 1){
 								window.location = "/manifest" + window.location.search;
-							}
-							/*
-							if(response != 1){
+							}else{
 								$('.recaptchaform').modal({backdrop: 'static', keyboard: false})
 							}
 							grecaptcha.render('recaptcha', {
@@ -68,7 +66,6 @@
 								'callback' : verifyCallback,
 								'theme' : 'light'
 							});
-							*/
 							console.log(response);
 						},
 						error: function(response){
