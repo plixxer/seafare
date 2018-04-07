@@ -18,7 +18,7 @@ foreach ($ids as $key => $value) {
 		$db->remove(
 			'salesforce.attendee__c',
 			Array(
-				'id'=>intval($value)
+				'sfid'=>intval($value)
 			)
 		)
 	);
