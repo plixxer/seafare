@@ -29,17 +29,18 @@
 
 	out($t);
 
-	/*
+
+	echo "update<br>";
 
 	echo $db->update("salesforce.attendee__c",
 		Array(
 			"first_name__c"=> "Johnny"
 		),
 		Array(
-			"id"=>$_POST['sql_id']
+			"id"=>$_GET['sql_id']
 		)
 	);
-*/	
+
 
 function out($arr){
 	echo "<pre>";
