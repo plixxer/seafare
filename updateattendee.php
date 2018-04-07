@@ -9,6 +9,7 @@
 
 	$db = new _database(0x0);
 
+/*
 
 	echo "test";
 
@@ -31,6 +32,11 @@
 
 
 	echo "update<br>";
+	*/
+
+	print_r($_POST);
+
+	/*
 
 	echo $db->update("salesforce.attendee__c",
 		Array(
@@ -45,7 +51,7 @@
 		Array(
 			"id"=>$_GET['sql_id']
 		)
-	);
+	);*/
 
 
 function out($arr){
