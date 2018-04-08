@@ -1,12 +1,9 @@
-<?php include ('config/config.php') ?>
-<?php include ('php/objects/_database.php') ?>
-
 <?php
- 
+	include ('config/config.php');
+	include ('php/objects/_database.php');
 //account
 //attendee__c
 
-echo 2;
 	$db = new _database(0x0);
 
 
