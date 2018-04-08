@@ -830,6 +830,20 @@ $(document).on("click", "#editRow .save", function( event ) {
 	var $form = $(this).closest("#editRow").find("form.needs-validation");
 	$form.trigger("submit");
 });
+
+$(document).on('click', '.add-attendee, .add-guest', function(){
+	var that = this;
+	$.ajax({
+		url: "canadd",
+		type: "get", //send it through get method
+		data: {"account_id":GET("id")},
+		success: function(response) {
+	  		$(that).closest('.addform').modal('hide');
+	  		$(".warningForm").modal('show');
+		}
+	});
+
+});
 function list_build(header, data){//obj, arr of obj
 	var th_string = '';
 	for(var key in header){
