@@ -843,7 +843,8 @@ $(document).on('click', '.add-attendee, .add-guest', function(){
 				$(that).closest('.addform').modal('hide');
 	  			$(".warningForm").modal('show');
 			}
-		}
+		},
+		dataType: 'json'
 	});
 
 });

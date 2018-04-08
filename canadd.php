@@ -6,7 +6,7 @@
 //account
 //attendee__c
 
-
+echo 2;
 	$db = new _database(0x0);
 
 
@@ -54,7 +54,7 @@
 	if( (count($exh_data) + count($guest_data)) < $exhinfo_data[0]['cy_attendee_allotment__c'] + $exhinfo_data[0]['cy_additional_attendees__c']){
 		echo 1;
 	}else{
-		echo "a" . 2;
+		echo 2;
 	}
 	
 
