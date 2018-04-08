@@ -838,9 +838,10 @@ $(document).on('click', '.add-attendee, .add-guest', function(){
 		type: "get", //send it through get method
 		data: {"account_id":GET("id")},
 		success: function(response) {
-			console.log(response);
-	  		$(that).closest('.addform').modal('hide');
-	  		$(".warningForm").modal('show');
+			if(response == 2){
+				$(that).closest('.addform').modal('hide');
+	  			$(".warningForm").modal('show');
+			}
 		}
 	});
 
