@@ -840,7 +840,7 @@ $(document).on('click', '.add-attendee, .add-guest', function(){
 		success: function(response) {
 			console.log(response);
 			if(response == 2){
-				$(that).closest('.addform').modal('hide');
+				$('.addform').modal('hide');
 	  			$(".warningForm").modal('show');
 			}
 		},
