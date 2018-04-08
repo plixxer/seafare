@@ -1,12 +1,6 @@
-
-<?php
-ini_set('display_errors', 1);
-error_reporting(E_ALL ^ E_NOTICE);
-?>
-<?php include ('config/config.php') ?>
-<?php include ('php/objects/_database.php') ?>
-
-<?php
+<?php 
+  include ('config/config.php');
+  include ('php/objects/_database.php');
  
 //account
 //attendee__c
