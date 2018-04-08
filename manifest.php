@@ -538,6 +538,7 @@ $(document).on("submit", "#AttendeeForm form.needs-validation, #GuestForm form.n
 		form_data[this.name] = this.value;
 	});
     if(this.checkValidity() !== false){
+    	console.log(form_data);
 		$.ajax({
 			type: "POST",
 			url: 'https://gentle-dawn-65313.herokuapp.com/addattendee',
