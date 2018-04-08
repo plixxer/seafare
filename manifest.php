@@ -253,7 +253,7 @@ $(document).ready(function(){
 						console.log(value);
 						if($.trim(value) == '') {
 							$(".emailValidationForm").modal("show");
-							return 'This field is required.'
+							return '* required.'
 						}
 					};
 					$('table.list.exhibitors .editable:not(.editable-email)').editable(editable_obj);
@@ -261,11 +261,11 @@ $(document).ready(function(){
 						console.log(value);
 						if($.trim(value) == '') {
 							$(".emailValidationForm").modal("show");
-							return 'This field is required.'
+							return '* required.'
 						}else if(!validateEmail($.trim(value))){
 							$(".emailValidationForm").modal("show");
 							console.log('not valid email');
-							return 'This is not a valid email';
+							return '* invalid email';
 						}
 					};
 					$('table.list.exhibitors .editable-email').editable(editable_obj);
@@ -385,18 +385,18 @@ $(document).ready(function(){
 					editable_obj['validate'] = function(value){
 						if($.trim(value) == '') {
 							$(".emailValidationForm").modal("show");
-							return 'This field is required.'
+							return '* required.'
 						}
 					};
 					$('table.list.guests .editable:not(.editable-email)').editable(editable_obj);
 					editable_obj['validate'] = function(value){
 						if($.trim(value) == '') {
 							$(".emailValidationForm").modal("show");
-							return 'This field is required.'
+							return '* required.'
 						}else if(!validateEmail($.trim(value))){
 							$(".emailValidationForm").modal("show");
 							console.log('not valid email');
-							return 'This is not a valid email';
+							return '* invalid email';
 						}
 					};
 					$('table.list.guests .editable-email').editable(editable_obj);
