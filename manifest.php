@@ -551,8 +551,7 @@ $(document).on("submit", "#AttendeeForm form.needs-validation, #GuestForm form.n
 					location.reload();
 				}
 				console.log(response);
-			},
-			dataType: 'json'
+			}
 		});
 	}
   });
