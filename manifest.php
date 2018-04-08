@@ -915,12 +915,12 @@ function validateEmail(email) {
 					</div>
 					<div class="form-group">
 						<label for="positioninput">Position</label>
-						<input name="position" type="text" class="form-control" id="positioninput" placeholder="enter position"/>
+						<input name="position" type="text" class="form-control required" id="positioninput" placeholder="enter position"/>
 						<div class="invalid-feedback">
         				  Please provide a position.
         				</div>
 					</div>
-					<input type="hidden" name="attendeetype" class="form-control" id="attendeetypeinput" value="Exhibitor"/>
+					<input type="hidden" name="attendeetype" class="form-control required" id="attendeetypeinput" value="Exhibitor"/>
 				</form>	
 			</div>
 			<!-- Modal Footer -->
@@ -981,19 +981,19 @@ function validateEmail(email) {
 					</div>
 					<div class="form-group">
 						<label for="positioninput">Position</label>
-						<input type="text" name="position" class="form-control" id="positioninput" placeholder="enter position"/>
+						<input type="text" name="position" class="form-control required" id="positioninput" placeholder="enter position"/>
 						<div class="invalid-feedback">
         				  Please provide a position.
         				</div>
 					</div>
 					<div class="form-group">
 						<label for="companyinput">Company Name</label>
-						<input type="text" name="company" class="form-control" id="companyinput" placeholder="enter company name"/>
+						<input type="text" name="company" class="form-control required" id="companyinput" placeholder="enter company name"/>
 						<div class="invalid-feedback">
         				  Please provide a company name.
         				</div>
 					</div>
-					<input type="hidden" name="attendeetype" class="form-control" id="attendeetypeinput" value="Guest"/>
+					<input type="hidden" name="attendeetype" class="form-control required" id="attendeetypeinput" value="Guest"/>
 				</form>	
 			</div>
 			<!-- Modal Footer -->
