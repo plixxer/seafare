@@ -835,7 +835,7 @@ $(document).on('click', '.add-attendee, .add-guest', function(){
 	var that = this;
 	$.ajax({
 		url: "canadd",
-		type: "get", //send it through get method
+		type: "post", //send it through get method
 		data: {"account_id":GET("id")},
 		success: function(response) {
 			console.log(response);
