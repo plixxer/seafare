@@ -574,7 +574,7 @@ $(document).on('change, blur', '.needs-validation input[type="email"]', function
 });
 $(document).on('change, blur', '.needs-validation input.required', function() {
 	var text = $(this);
-	if (text.length == 0) {
+	if (text.length > 0) {
 		text.removeClass('is-valid').addClass('is-invalid');
 		text.siblings(".invalid-feedback").text(text.prop("validationMessage"))
 	} else {
