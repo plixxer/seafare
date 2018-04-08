@@ -886,28 +886,28 @@ function validateEmail(email) {
 				<form role="form" class="needs-validation" novalidate>
 					<div class="form-group">
 						<label for="firstnameinput">First Name</label>
-						<input type="text" name="firstname" class="form-control required" id="firstnameinput" placeholder="enter first name"/>
+						<input type="text" name="firstname" class="form-control required" id="firstnameinput" placeholder="enter first name" required/>
 						<div class="invalid-feedback">
         				  Please provide a first name.
         				</div>
 					</div>
 					<div class="form-group">
 						<label for="lastnameinput">Last Name</label>
-						<input type="text" name="lastname" class="form-control required" id="lastnameinput" placeholder="enter last name"/>
+						<input type="text" name="lastname" class="form-control required" id="lastnameinput" placeholder="enter last name" required/>
 						<div class="invalid-feedback">
         				   Please provide a last name.
         				</div>
 					</div>
 					<div class="form-group">
 						<label for="emailinput">Email</label>
-						<input type="email" name="email" class="form-control" id="emailinput" placeholder="enter email"/>
+						<input type="email" name="email" class="form-control" id="emailinput" placeholder="enter email" required/>
 						<div class="invalid-feedback">
         				  Please provide a propper email
         				</div>
 					</div>
 					<div class="form-group">
 						<label for="countryinput">Country</label>
-						<select name="country" class="dropdown_countries form-control" id="countryinput" placeholder="enter country">
+						<select name="country" class="dropdown_countries form-control" id="countryinput" placeholder="enter country" required>
 						</select>
 						<div class="invalid-feedback">
         				  Please provide a country.
@@ -915,12 +915,12 @@ function validateEmail(email) {
 					</div>
 					<div class="form-group">
 						<label for="positioninput">Position</label>
-						<input name="position" type="text" class="form-control required" id="positioninput" placeholder="enter position"/>
+						<input name="position" type="text" class="form-control required" id="positioninput" placeholder="enter position" required/>
 						<div class="invalid-feedback">
         				  Please provide a position.
         				</div>
 					</div>
-					<input type="hidden" name="attendeetype" class="form-control required" id="attendeetypeinput" value="Exhibitor"/>
+					<input type="hidden" name="attendeetype" class="form-control required" id="attendeetypeinput" value="Exhibitor" required/>
 				</form>	
 			</div>
 			<!-- Modal Footer -->
@@ -966,14 +966,14 @@ function validateEmail(email) {
 					</div>
 					<div class="form-group">
 						<label for="emailinput">Email</label>
-						<input type="email" name="email" class="form-control" id="emailinput" placeholder="enter email"/>
+						<input type="email" name="email" class="form-control" id="emailinput" placeholder="enter email" required/>
 						<div class="invalid-feedback">
         				  Please provide a propper email
         				</div>
 					</div>
 					<div class="form-group">
 						<label for="countryinput">Country</label>
-						<select name="country" class="dropdown_countries form-control" id="countryinput" placeholder="enter country">
+						<select name="country" class="dropdown_countries form-control" id="countryinput" placeholder="enter country" required>
 						</select>
 						<div class="invalid-feedback">
         				  Please provide a country.
@@ -981,14 +981,14 @@ function validateEmail(email) {
 					</div>
 					<div class="form-group">
 						<label for="positioninput">Position</label>
-						<input type="text" name="position" class="form-control required" id="positioninput" placeholder="enter position"/>
+						<input type="text" name="position" class="form-control required" id="positioninput" placeholder="enter position" required/>
 						<div class="invalid-feedback">
         				  Please provide a position.
         				</div>
 					</div>
 					<div class="form-group">
 						<label for="companyinput">Company Name</label>
-						<input type="text" name="company" class="form-control required" id="companyinput" placeholder="enter company name"/>
+						<input type="text" name="company" class="form-control required" id="companyinput" placeholder="enter company name" required/>
 						<div class="invalid-feedback">
         				  Please provide a company name.
         				</div>
