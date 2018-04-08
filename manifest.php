@@ -986,10 +986,10 @@ function validateEmail(email) {
         				</div>
 					</div>
 					<div class="form-group">
-						<label for="companyinput">Position</label>
-						<input type="text" name="company" class="form-control" id="companyinput" placeholder="enter position"/>
+						<label for="companyinput">Company Name</label>
+						<input type="text" name="company" class="form-control" id="companyinput" placeholder="enter company name"/>
 						<div class="invalid-feedback">
-        				  Please provide a position.
+        				  Please provide a company name.
         				</div>
 					</div>
 					<input type="hidden" name="attendeetype" class="form-control" id="attendeetypeinput" value="Guest"/>
