@@ -51,7 +51,7 @@
 		$optional
 	);
 
-	if( (count($exh_data) + count($guest_data)) < $exhinfo_data[0]['cy_attendee_allotment__c'] + $exhinfo_data[0]['cy_additional_attendees__c']){
+	if( (count($exh_data) + count($guest_data)) <= $exhinfo_data[0]['cy_attendee_allotment__c'] + $exhinfo_data[0]['cy_additional_attendees__c']){
 		$data = Array(
 			"attendee_type__c"=> $_POST["data"]["attendeetype"],
 			"company__c"=> $_POST["account_id"],
