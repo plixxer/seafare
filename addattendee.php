@@ -55,7 +55,7 @@
 		);
 		echo 1;
 	}else{
-		echo 2;
+		echo count($exh_data) . ":" . count($guest_data) . ":" . $exhinfo_data[0]['cy_attendee_allotment__c'] . ":" . $exhinfo_data[0]['cy_additional_attendees__c'];
 	}
 	
 
