@@ -549,7 +549,7 @@ $(document).on("submit", "#AttendeeForm form.needs-validation, #GuestForm form.n
 					$(".warningForm").modal("show");
 				}else if(response == 1){
 					$(".addform").modal("hide");
-					location.reload();
+					//location.reload();
 				}
 				console.log(response);
 			}
