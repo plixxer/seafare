@@ -985,6 +985,13 @@ function validateEmail(email) {
         				  Please provide a position.
         				</div>
 					</div>
+					<div class="form-group">
+						<label for="companyinput">Position</label>
+						<input type="text" name="company" class="form-control" id="companyinput" placeholder="enter position"/>
+						<div class="invalid-feedback">
+        				  Please provide a position.
+        				</div>
+					</div>
 					<input type="hidden" name="attendeetype" class="form-control" id="attendeetypeinput" value="Guest"/>
 				</form>	
 			</div>
