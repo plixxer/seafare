@@ -336,6 +336,7 @@ $(document).ready(function(){
 					'<span id="confirmation_number__c" data-val="' + data[i]['confirmation_number__c'] + '">' + data[i]['confirmation_number__c'] + '</span>',
 					'<a href="#" class="editable-dropdown" id="country__c" sql_id="' + data[i]['sfid'] + '" selected="' + data[i]['country__c'] + '" data-val="' + data[i]['country__c'] + '">' + data[i]['country__c'] + '</a>',
 					'<a href="#" class="editable" id="position__c" sql_id="'+ data[i]['sfid'] +'" data-type="text" data-title="Enter position" data-val="' + data[i]['position__c'] + '">' + data[i]['position__c'] + '</a>',
+					'<a href="#" class="editable" id="guest_company_name__c" sql_id="'+ data[i]['sfid'] +'" data-type="text" data-title="Enter position" data-val="' + data[i]['guest_company_name__c'] + '">' + data[i]['guest_company_name__c'] + '</a>',
 					'<a href="#" class="editable editable-email" id="email__c" sql_id="'+ data[i]['sfid'] +'" data-type="text" data-title="Enter email" data-val="' + data[i]['email__c'] + '">' + data[i]['email__c'] + '</a>',
 					'<a href="#" class="editable" id="last_name__c" sql_id="'+ data[i]['sfid'] +'" data-type="text" data-title="Enter last name" data-val="' + data[i]['last_name__c'] + '">' + data[i]['last_name__c'] + '</a>',
 					'<a href="#" class="editable" id="first_name__c" sql_id="'+ data[i]['sfid'] +'" data-type="text" data-title="Enter first name" data-val="' + data[i]['first_name__c'] + '">' + data[i]['first_name__c'] + '</a>',
