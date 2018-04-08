@@ -27,6 +27,7 @@ error_reporting(E_ALL ^ E_NOTICE);
 			"sfid",
 			"attendee_type__c",
 			"company__c",
+			"guest_company_name__c",
 			"confirmation_number__c",
 			"country__c",
 			"email__c",
