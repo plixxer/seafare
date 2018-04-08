@@ -840,8 +840,10 @@ $(document).on('click', '.add-attendee, .add-guest', function(){
 		success: function(response) {
 			console.log(response);
 			if(response == 2){
-				$('.addform').modal('hide');
-	  			$(".warningForm").modal('show');
+				window.setTimeout(function(){
+					$('.addform').modal('hide');
+	  				$(".warningForm").modal('show');
+				}, 500);
 			}
 		},
 		dataType: 'json'
