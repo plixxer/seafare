@@ -38,7 +38,7 @@
 		if(Object.keys(form_data).length > 0){
 			$.ajax({
 				type: "POST",
-				url: 'https://gentle-dawn-65313.herokuapp.com/recaptchavalidate',
+				url: 'recaptchavalidate',
 				data: form_data,
 				success: function(response){
 					if(response == 1){
@@ -89,7 +89,7 @@ $(document).on("click", ".recaptchaform .submit", function( event ) {
 			      var onloadCallback = function() {
 			      	$.ajax({
 						type: "GET",
-						url: 'https://gentle-dawn-65313.herokuapp.com/recaptchavalidate',
+						url: 'recaptchavalidate',
 						data: {},
 						success: function(response){
 							console.log(response);
