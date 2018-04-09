@@ -841,7 +841,7 @@ $.ajax({
 			console.log(response);
 			if(response == 2){
 				window.setTimeout(function(){
-	  				$("button.add-attendee, button.add-guest").hide();
+	  				$("button.add-attendee, button.add-guest").css('visibility', 'hidden');
 				}, 500);
 			}
 		},
