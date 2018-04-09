@@ -167,7 +167,7 @@ $(document).ready(function(){
 
 	$.ajax({
 		type: "POST",
-		url: 'https://gentle-dawn-65313.herokuapp.com/exhibitorinfo',
+		url: 'exhibitorinfo',
 		data: {"account_id":GET("id")},
 		success: function(response){
 			console.log(response);
@@ -195,7 +195,7 @@ $(document).ready(function(){
 
 	$.ajax({
 		type: "POST",
-		url: "https://gentle-dawn-65313.herokuapp.com/exhibitors",
+		url: "exhibitors",
 		data: {"account_id":GET("id"), "orderby": GET("exh_orderby"), "order": GET("exh_order")},
 		success: function(data){
 			data = JSON.parse(data);
@@ -239,7 +239,7 @@ $(document).ready(function(){
 							console.log([response, newValue, $(this).attr('sql_id')]);
 							$.ajax({
 								type: "POST",
-								url: 'https://gentle-dawn-65313.herokuapp.com/updatelist',
+								url: 'updatelist',
 								data: {"account_id":GET("id"),'sfid': $(this).attr('sql_id'), 'field': $(this).attr('id'), 'value': newValue},
 								onblur: 'submit',
 								success: function(response){
@@ -287,7 +287,7 @@ $(document).ready(function(){
 					
 					$.ajax({
 						type: "GET",
-						url: 'https://gentle-dawn-65313.herokuapp.com/getcountries',
+						url: 'getcountries',
 						cache: true,
 						data: {},
 						dataType: 'json',
@@ -303,7 +303,7 @@ $(document).ready(function(){
 									console.log('go' + newValue);
 									$.ajax({
 										type: "POST",
-										url: 'https://gentle-dawn-65313.herokuapp.com/updatelist',
+										url: 'updatelist',
 										data: {"account_id":GET("id"),'sfid': $(this).attr('sql_id'), 'field': $(this).attr('id'), 'value': newValue},
 										success: function(response){
 											console.log(response);
@@ -320,7 +320,7 @@ $(document).ready(function(){
 	});
 	$.ajax({
 		type: "POST",
-		url: "https://gentle-dawn-65313.herokuapp.com/guests",
+		url: "guests",
 		data: {"account_id":GET("id"), "orderby": GET("guest_orderby"), "order": GET("guest_order")},
 		success: function(data){
 			data = JSON.parse(data);
@@ -367,7 +367,7 @@ $(document).ready(function(){
 							console.log([response, newValue, $(this).attr('sql_id')]);
 							$.ajax({
 								type: "POST",
-								url: 'https://gentle-dawn-65313.herokuapp.com/updatelist',
+								url: 'updatelist',
 								data: {"account_id":GET("id"),'sfid': $(this).attr('sql_id'), 'field': $(this).attr('id'), 'value': newValue},
 								success: function(response){
 									console.log(response);
@@ -413,7 +413,7 @@ $(document).ready(function(){
 					
 					$.ajax({
 						type: "GET",
-						url: 'https://gentle-dawn-65313.herokuapp.com/getcountries',
+						url: 'getcountries',
 						cache: true,
 						data: {},
 						dataType: 'json',
@@ -429,7 +429,7 @@ $(document).ready(function(){
 									console.log('go' + newValue);
 									$.ajax({
 										type: "POST",
-										url: 'https://gentle-dawn-65313.herokuapp.com/updatelist',
+										url: 'updatelist',
 										data: {"account_id":GET("id"),'sfid': $(this).attr('sql_id'), 'field': $(this).attr('id'), 'value': newValue},
 										success: function(response){
 											console.log(response);
@@ -446,7 +446,7 @@ $(document).ready(function(){
 	});
 	$.ajax({
 		type: "GET",
-		url: 'https://gentle-dawn-65313.herokuapp.com/getcountries',
+		url: 'getcountries',
 		cache: true,
 		data: {},
 		success: function(response){
@@ -468,7 +468,7 @@ $(document).ready(function(){
 		});
 		$.ajax({
 			type: "POST",
-			url: 'https://gentle-dawn-65313.herokuapp.com/removeuser',
+			url: 'removeuser',
 			data: {"account_id":GET("id"), 'ids': JSON.stringify(sql_ids)},
 			success: function(response){
 				checked.parents("tr").remove();
@@ -486,7 +486,7 @@ $(document).ready(function(){
 		});
 		$.ajax({
 			type: "POST",
-			url: 'https://gentle-dawn-65313.herokuapp.com/removeuser',
+			url: 'removeuser',
 			data: {"account_id":GET("id"), 'ids': JSON.stringify(sql_ids)},
 			success: function(response){
 				checked.parents("tr").remove();
@@ -544,7 +544,7 @@ $(document).on("submit", "#AttendeeForm form.needs-validation, #GuestForm form.n
     	console.log(form_data);
 		$.ajax({
 			type: "POST",
-			url: 'https://gentle-dawn-65313.herokuapp.com/addattendee',
+			url: 'addattendee',
 			data: {"account_id":GET("id"), 'data': form_data},
 			success: function(response){
 				if(response == 2){
@@ -598,7 +598,7 @@ $(document).on("submit", ".recaptchaform form", function( event ) {
 	if(Object.keys(form_data).length > 0){
 		$.ajax({
 			type: "POST",
-			url: 'https://gentle-dawn-65313.herokuapp.com/recaptchavalidate',
+			url: 'recaptchavalidate',
 			data: form_data,
 			success: function(response){
 				if(response == 1){
@@ -1070,7 +1070,7 @@ function validateEmail(email) {
 			      var onloadCallback = function() {
 			      	$.ajax({
 						type: "GET",
-						url: 'https://gentle-dawn-65313.herokuapp.com/recaptchavalidate',
+						url: 'recaptchavalidate',
 						data: {},
 						success: function(response){
 							if(response != 1){
@@ -1259,5 +1259,6 @@ function validateEmail(email) {
 		</div>
 	</div>
 </div>
+test
 </body>
 </html>
