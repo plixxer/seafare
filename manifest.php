@@ -831,6 +831,24 @@ $(document).on("click", "#editRow .save", function( event ) {
 	$form.trigger("submit");
 });
 
+
+
+$.ajax({
+		url: "canadd",
+		type: "post", //send it through get method
+		data: {"account_id":GET("id")},
+		success: function(response) {
+			console.log(response);
+			if(response == 2){
+				window.setTimeout(function(){
+	  				$("button.add-attendee, button.add-guest").hide();
+				}, 500);
+			}
+		},
+		dataType: 'json'
+	});
+
+
 $(document).on('click', '.add-attendee, .add-guest', function(){
 	var that = this;
 	$.ajax({
