@@ -142,6 +142,9 @@ div#edit_row{
 div#edit_row:hover{
 	color:#0056b3;
 }
+button.add-attendee, button.add-guest{
+	visibility:hidden;
+}
 </style>
 	<script>
 $(window).load(function(){
@@ -839,10 +842,8 @@ $.ajax({
 		data: {"account_id":GET("id")},
 		success: function(response) {
 			console.log(response);
-			if(response == 2){
-				window.setTimeout(function(){
-	  				$("button.add-attendee, button.add-guest").css('visibility', 'hidden');
-				}, 500);
+			if(response == 1){
+				$("button.add-attendee, button.add-guest").css('visibility', 'visible');
 			}
 		},
 		dataType: 'json'
