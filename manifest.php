@@ -1259,6 +1259,5 @@ function validateEmail(email) {
 		</div>
 	</div>
 </div>
-test
 </body>
 </html>
