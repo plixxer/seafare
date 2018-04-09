@@ -25,7 +25,7 @@ function validate($captcha_response){
 	if(!$captcha_response){//response is missing
 		die("captcha response missing.");
 	}else{//response is there but not validated
-		$response=json_decode(file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=6LddnE8UAAAAAG72b2R7JQadoc7fXXRl2w7xi8g2&response=".$_POST['g-recaptcha-response']."&remoteip=".$_SERVER['REMOTE_ADDR']), true);
+		$response=json_decode(file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=6LcCGlIUAAAAAHu_SVnZ4AxiMQ5drt-pWNC_B45I&response=".$_POST['g-recaptcha-response']."&remoteip=".$_SERVER['REMOTE_ADDR']), true);
 		if($response['success'] == false){//response is false
 			return 0;
 		}else{//response is valid

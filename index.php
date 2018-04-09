@@ -99,7 +99,7 @@ $(document).on("click", ".recaptchaform .submit", function( event ) {
 								$('.recaptchaform').modal({backdrop: 'static', keyboard: false})
 							}
 							grecaptcha.render('recaptcha', {
-								'sitekey' : '6LddnE8UAAAAAKbWMOXREN-YKqnJnYAYn_o3uo6_',
+								'sitekey' : '6LcCGlIUAAAAAMiTcAOESpiOtmqfDxD_aWgA9dUw',
 								'callback' : verifyCallback,
 								'theme' : 'light'
 							});
