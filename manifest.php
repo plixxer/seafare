@@ -461,6 +461,7 @@ $(document).ready(function(){
 	});
 
 	$(document).on('click', '.exhibitor-list .actionbtns .btn.delete-confirm',function(){
+		var that = $(this);
 		var sql_ids = [];
 		var checked = $('.exhibitor-list tr input.remove-user[type="checkbox"]:checked');
 		checked.each(function(key, val){
@@ -472,6 +473,7 @@ $(document).ready(function(){
 			data: {"account_id":GET("id"), 'ids': JSON.stringify(sql_ids)},
 			success: function(response){
 				checked.parents("tr").remove();
+				that.hide();
 				console.log(response);
 			},
 			dataType: 'json'
@@ -479,6 +481,7 @@ $(document).ready(function(){
 	});
 
 	$(document).on('click', '.guests-list .actionbtns .btn.delete-confirm',function(){
+		var that = $(this);
 		var sql_ids = [];
 		var checked = $('.guests-list tr input.remove-user[type="checkbox"]:checked');
 		checked.each(function(key, val){
@@ -490,6 +493,7 @@ $(document).ready(function(){
 			data: {"account_id":GET("id"), 'ids': JSON.stringify(sql_ids)},
 			success: function(response){
 				checked.parents("tr").remove();
+				that.hide();
 				console.log(response);
 			},
 			dataType: 'json'
