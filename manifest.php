@@ -775,64 +775,7 @@ $(document).on("click", ".list.exhibitors div#edit_exh_row", function( event ) {
 					}
 				});
 			}
-			$("#editRow").modal({backdrop: 'static', keyboard: false});
-		}
-	});
-});
-
-$(document).on("click", ".list.guests div#edit_exh_row", function( event ) {
-	var data_ = {};
-	data_['sql_id'] = $(this).attr('sql_id');
-	data_['attendeetype'] = "Guest";
-	$(this).closest("table tr").find("[data-val]").each(function(key, val){
-		data_[$(this).attr("id")] = $(this).attr("data-val");
-	});
-	console.log(data_);
-	$.ajax({
-		url: "partials/edit_exh_row_modal",
-		type: "get", //send it through get method
-		data: data_,
-		success: function(response) {
-	  		$(".edit_exh_row_modal_container").html(response);
-	  		for(var key in countries){
-				$('select[name="country"]').each(function(){
-					if(countries[key] == data_['country__c']){
-						$(this).append("<option value='" + countries[key] + "' selected>"+ countries[key] +"</option>");
-					}else{
-						$(this).append("<option value='" + countries[key] + "'>"+ countries[key] +"</option>");
-					}
-				});
-			}
-			$("#editRow").modal({backdrop: 'static', keyboard: false});
-		}
-	});
-});
-
-//guest modal
-$(document).on("click", ".list.exhibitors div#edit_guest_row", function( event ) {
-	var data_ = {};
-	data_['sql_id'] = $(this).attr('sql_id');
-	data_['attendeetype'] = "Exhibitor";
-	$(this).closest("table tr").find("[data-val]").each(function(key, val){
-		data_[$(this).attr("id")] = $(this).attr("data-val");
-	});
-	console.log(data_);
-	$.ajax({
-		url: "partials/edit_guest_row_modal",
-		type: "get", //send it through get method
-		data: data_,
-		success: function(response) {
-	  		$(".edit_guest_row_modal_container").html(response);
-	  		for(var key in countries){
-				$('select[name="country"]').each(function(){
-					if(countries[key] == data_['country__c']){
-						$(this).append("<option value='" + countries[key] + "' selected>"+ countries[key] +"</option>");
-					}else{
-						$(this).append("<option value='" + countries[key] + "'>"+ countries[key] +"</option>");
-					}
-				});
-			}
-			$("#editRow").modal({backdrop: 'static', keyboard: false});
+			$(".edit_exh_row_modal_container #editRow").modal({backdrop: 'static', keyboard: false});
 		}
 	});
 });
@@ -860,7 +803,7 @@ $(document).on("click", ".list.guests div#edit_guest_row", function( event ) {
 					}
 				});
 			}
-			$("#editRow").modal({backdrop: 'static', keyboard: false});
+			$(".edit_guest_row_modal_container #editRow").modal({backdrop: 'static', keyboard: false});
 		}
 	});
 });
