@@ -134,12 +134,12 @@ ul.noli > li{
     padding: 10px 17px;
     margin: 0;
 }
-div#edit_row{
+div#edit_exh_row, div#edit_guest_row{
     padding: 6px;
     cursor:pointer;
     color:#428bca;
 }
-div#edit_row:hover{
+div#edit_exh_row:hover, div#edit_guest_row:hover{
 	color:#0056b3;
 }
 button.add-attendee, button.add-guest{
@@ -218,7 +218,7 @@ $(document).ready(function(){
 					'<a href="#" class="editable" id="last_name__c" sql_id="'+ data[i]['sfid'] +'" data-type="text" data-title="Enter last name" data-val="' + data[i]['last_name__c'] + '">' + data[i]['last_name__c'] + '</a>',
 					'<a href="#" class="editable" id="first_name__c" sql_id="'+ data[i]['sfid'] +'" data-type="text" data-title="Enter first name" data-val="' + data[i]['first_name__c'] + '">' + data[i]['first_name__c'] + '</a>',
 					'<input class="remove-user" sql_id="' + data[i]['sfid'] + '" type="checkbox" value="1" />',
-					'<div id="edit_row" sql_id="'+ data[i]['sfid'] +'"><i class="fas fa-edit"></i></div>',
+					'<div id="edit_exh_row" sql_id="'+ data[i]['sfid'] +'"><i class="fas fa-edit"></i></div>',
 				]);
 			}
 					var lb = list_build(
@@ -344,7 +344,7 @@ $(document).ready(function(){
 					'<a href="#" class="editable" id="last_name__c" sql_id="'+ data[i]['sfid'] +'" data-type="text" data-title="Enter last name" data-val="' + data[i]['last_name__c'] + '">' + data[i]['last_name__c'] + '</a>',
 					'<a href="#" class="editable" id="first_name__c" sql_id="'+ data[i]['sfid'] +'" data-type="text" data-title="Enter first name" data-val="' + data[i]['first_name__c'] + '">' + data[i]['first_name__c'] + '</a>',
 					'<input class="remove-user" sql_id="' + data[i]['sfid'] + '" type="checkbox" value="1" />',
-					'<div id="edit_row" sql_id="'+ data[i]['sfid'] +'"><i class="fas fa-edit"></i></div>'
+					'<div id="edit_guest_row" sql_id="'+ data[i]['sfid'] +'"><i class="fas fa-edit"></i></div>'
 				]);
 			}
 					var lb = list_build(
@@ -750,7 +750,9 @@ $(document).on("click", ".list.guests th", function( event ) {
 
 });
 
-$(document).on("click", ".list.exhibitors div#edit_row", function( event ) {
+
+//exh modal
+$(document).on("click", ".list.exhibitors div#edit_exh_row", function( event ) {
 	var data_ = {};
 	data_['sql_id'] = $(this).attr('sql_id');
 	data_['attendeetype'] = "Exhibitor";
@@ -759,11 +761,11 @@ $(document).on("click", ".list.exhibitors div#edit_row", function( event ) {
 	});
 	console.log(data_);
 	$.ajax({
-		url: "partials/edit_row_modal",
+		url: "partials/edit_exh_row_modal",
 		type: "get", //send it through get method
 		data: data_,
 		success: function(response) {
-	  		$(".edit_row_modal_container").html(response);
+	  		$(".edit_exh_row_modal_container").html(response);
 	  		for(var key in countries){
 				$('select[name="country"]').each(function(){
 					if(countries[key] == data_['country__c']){
@@ -778,7 +780,7 @@ $(document).on("click", ".list.exhibitors div#edit_row", function( event ) {
 	});
 });
 
-$(document).on("click", ".list.guests div#edit_row", function( event ) {
+$(document).on("click", ".list.guests div#edit_exh_row", function( event ) {
 	var data_ = {};
 	data_['sql_id'] = $(this).attr('sql_id');
 	data_['attendeetype'] = "Guest";
@@ -787,11 +789,68 @@ $(document).on("click", ".list.guests div#edit_row", function( event ) {
 	});
 	console.log(data_);
 	$.ajax({
-		url: "partials/edit_row_modal",
+		url: "partials/edit_exh_row_modal",
 		type: "get", //send it through get method
 		data: data_,
 		success: function(response) {
-	  		$(".edit_row_modal_container").html(response);
+	  		$(".edit_exh_row_modal_container").html(response);
+	  		for(var key in countries){
+				$('select[name="country"]').each(function(){
+					if(countries[key] == data_['country__c']){
+						$(this).append("<option value='" + countries[key] + "' selected>"+ countries[key] +"</option>");
+					}else{
+						$(this).append("<option value='" + countries[key] + "'>"+ countries[key] +"</option>");
+					}
+				});
+			}
+			$("#editRow").modal({backdrop: 'static', keyboard: false});
+		}
+	});
+});
+
+//guest modal
+$(document).on("click", ".list.exhibitors div#edit_guest_row", function( event ) {
+	var data_ = {};
+	data_['sql_id'] = $(this).attr('sql_id');
+	data_['attendeetype'] = "Exhibitor";
+	$(this).closest("table tr").find("[data-val]").each(function(key, val){
+		data_[$(this).attr("id")] = $(this).attr("data-val");
+	});
+	console.log(data_);
+	$.ajax({
+		url: "partials/edit_guest_row_modal",
+		type: "get", //send it through get method
+		data: data_,
+		success: function(response) {
+	  		$(".edit_guest_row_modal_container").html(response);
+	  		for(var key in countries){
+				$('select[name="country"]').each(function(){
+					if(countries[key] == data_['country__c']){
+						$(this).append("<option value='" + countries[key] + "' selected>"+ countries[key] +"</option>");
+					}else{
+						$(this).append("<option value='" + countries[key] + "'>"+ countries[key] +"</option>");
+					}
+				});
+			}
+			$("#editRow").modal({backdrop: 'static', keyboard: false});
+		}
+	});
+});
+
+$(document).on("click", ".list.guests div#edit_guest_row", function( event ) {
+	var data_ = {};
+	data_['sql_id'] = $(this).attr('sql_id');
+	data_['attendeetype'] = "Guest";
+	$(this).closest("table tr").find("[data-val]").each(function(key, val){
+		data_[$(this).attr("id")] = $(this).attr("data-val");
+	});
+	console.log(data_);
+	$.ajax({
+		url: "partials/edit_guest_row_modal",
+		type: "get", //send it through get method
+		data: data_,
+		success: function(response) {
+	  		$(".edit_guest_row_modal_container").html(response);
 	  		for(var key in countries){
 				$('select[name="country"]').each(function(){
 					if(countries[key] == data_['country__c']){
@@ -908,7 +967,8 @@ function validateEmail(email) {
 	</script>
 </head>
 <body>
-<div class="edit_row_modal_container"></div>
+<div class="edit_exh_row_modal_container"></div>
+<div class="edit_guest_row_modal_container"></div>
 <!-- Attendee Modal -->
 <div class="modal fade addform" id="AttendeeForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="modal-dialog">
