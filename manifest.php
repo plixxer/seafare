@@ -510,6 +510,10 @@ $(document).ready(function(){
 			dataType: 'json'
 		});
 	});
+	/* feature add */
+	window.setTimeout(function(){
+		$('table.list tr td > *[sql_id=""]').parent().prepend('<div class="overlay"></div>');
+	}, 500);
 });
 
 $(document).on('click','.list.exhibitors input[type="checkbox"]', function(){
@@ -900,11 +904,6 @@ function list_build(header, data){//obj, arr of obj
 		}
 		tr_string += '</tr>';
 	}
-
-	/* feature add */
-	window.setTimeout(function(){
-		$('table.list tr td > *[sql_id=""]').parent().prepend('<div class="overlay"></div>');
-	}, 500);
 
 	return [th_string, tr_string];
 }
