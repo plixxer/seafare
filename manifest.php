@@ -145,6 +145,17 @@ div#edit_exh_row:hover, div#edit_guest_row:hover{
 button.add-attendee, button.add-guest{
 	visibility:hidden;
 }
+
+
+.list td{
+	position:relative;
+}
+.list .overlay{
+	width: 100%;
+    height: 100%;
+    background: red;
+    position: absolute;
+}
 </style>
 	<script>
 $(window).load(function(){
@@ -500,6 +511,8 @@ $(document).ready(function(){
 		});
 	});
 
+
+	$('table.list tr td > *[sql_id=""]').parent().prepend('<div class="overlay"></div>');
 });
 
 $(document).on('click','.list.exhibitors input[type="checkbox"]', function(){
