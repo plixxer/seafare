@@ -32,7 +32,7 @@
 					</div>
 					<div class="form-group">
 						<label for="emailinput">Email</label>
-						<input type="email" name="email" class="form-control" id="emailinput" placeholder="enter email" value="<?= $_GET['email__c']; ?>"/>
+						<input type="email" name="email" class="form-control" id="emailinput" placeholder="enter email" value="<?= $_GET['guest_email__c']; ?>"/>
 						<div class="invalid-feedback">
         				  Please provide a propper email
         				</div>
