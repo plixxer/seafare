@@ -24,7 +24,7 @@
 			"guest_company_name__c",
 			"confirmation_number__c",
 			"country__c",
-			"email__c",
+			"guest_email__c",
 			"first_name__c",
 			"last_name__c",
 			"position__c",
