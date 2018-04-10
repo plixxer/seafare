@@ -50,12 +50,14 @@
 		$optional
 	);
 
+
+
+
 	if( (count($exh_data) + count($guest_data)) < $exhinfo_data[0]['cy_attendee_allotment__c'] + $exhinfo_data[0]['cy_additional_attendees__c']){
 		$data = Array(
 			"attendee_type__c"=> $_POST["data"]["attendeetype"],
 			"company__c"=> $_POST["account_id"],
 			"country__c"=> $_POST["data"]["country"],
-			"email__c"=> $_POST["data"]["email"],
 			"first_name__c"=> $_POST["data"]["firstname"],
 			"last_name__c"=> $_POST["data"]["lastname"],
 			"position__c"=> $_POST["data"]["position"],
@@ -63,6 +65,9 @@
 		);
 		if($_POST["data"]["attendeetype"] == "Guest"){
 			$data['guest_company_name__c'] = $_POST["data"]["company"];
+			$data['guest_email__c'] = $_POST["data"]["email"];
+		}else{
+			$data['email__c'] = $_POST["data"]["email"];
 		}
 		$insert = $db->insert("salesforce.attendee__c",
 			$data
