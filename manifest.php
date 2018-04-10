@@ -146,16 +146,6 @@ button.add-attendee, button.add-guest{
 	visibility:hidden;
 }
 
-
-.list td{
-	position:relative;
-}
-.list .overlay{
-	width: 100%;
-    height: 100%;
-    background: red;
-    position: absolute;
-}
 </style>
 	<script>
 $(window).load(function(){
@@ -512,7 +502,9 @@ $(document).ready(function(){
 	});
 	/* feature add */
 	window.setTimeout(function(){
-		$('table.list tr td > *[sql_id=""]').parent().prepend('<div class="overlay"></div>');
+		$('table.list tr td > *[sql_id=""]').closest("td").each(function(){
+			$(this).html($(this).text());
+		});
 	}, 500);
 });
 
